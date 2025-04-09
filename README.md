@@ -34,7 +34,7 @@
 
 - **銷售報表**
 
-![A](銷售報表(https://github.com/Taskeshi-Wang/web20250401/blob/main/images/screenshots/%E5%BE%8C%E5%8F%B0%E9%8A%B7%E5%94%AE%E5%A0%B1%E8%A1%A8.png)
+![銷售報表](https://github.com/Taskeshi-Wang/web20250401/blob/main/images/screenshots/%E5%BE%8C%E5%8F%B0%E9%8A%B7%E5%94%AE%E5%A0%B1%E8%A1%A8.png)
 
 ## 🛠️ 專案技術
 
