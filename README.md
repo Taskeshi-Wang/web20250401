@@ -6,17 +6,35 @@
 
 ## 📸 畫面展示
 
-### 🔷 前台畫面
+### 🔷 首頁
 
-![前台首頁](../images/screenshots/首頁.jpg)
+![首頁](https://github.com/Taskeshi-Wang/web20250401/blob/main/images/screenshots/%E9%A6%96%E9%A0%81.png)
+
+- **會員帳號管理**
+
+![會員帳號管理](https://github.com/Taskeshi-Wang/web20250401/blob/main/images/screenshots/%E5%89%8D%E5%8F%B0%E5%B8%B3%E8%99%9F%E7%AE%A1%E7%90%86.png)
+
+- **會員訂單查詢**
+
+![會員訂單查詢](https://github.com/Taskeshi-Wang/web20250401/blob/main/images/screenshots/%E5%89%8D%E5%8F%B0%E8%A8%82%E5%96%AE%E6%9F%A5%E8%A9%A2.png)
 
 ### 🔶 後台管理系統
 
-![後台管理](images/screenshots/backend.jpg)
+- **會員管理**
 
-> 圖片請放在 `screenshots` 資料夾中，並以相對路徑引入
+![會員管理](https://github.com/Taskeshi-Wang/web20250401/blob/main/images/screenshots/%E5%BE%8C%E5%8F%B0%E6%9C%83%E5%93%A1%E7%AE%A1%E7%90%86.png)
 
----
+- **訂單管理**
+
+![訂單管理](https://github.com/Taskeshi-Wang/web20250401/blob/main/images/screenshots/%E5%BE%8C%E5%8F%B0%E8%A8%82%E5%96%AE%E7%AE%A1%E7%90%86.png)
+
+- **商品管理**
+
+![商品管理](https://github.com/Taskeshi-Wang/web20250401/blob/main/images/screenshots/%E5%BE%8C%E5%8F%B0%E5%95%86%E5%93%81%E7%AE%A1%E7%90%86.png)
+
+- **銷售報表**
+
+![A](銷售報表(https://github.com/Taskeshi-Wang/web20250401/blob/main/images/screenshots/%E5%BE%8C%E5%8F%B0%E9%8A%B7%E5%94%AE%E5%A0%B1%E8%A1%A8.png)
 
 ## 🛠️ 專案技術
 
