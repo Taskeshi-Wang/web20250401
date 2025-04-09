@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行程管理</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Iansui&family=Kiwi+Maru&family=Noto+Sans+TC:wght@100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: "Kiwi Maru", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .dropdown-content {
+            position: fixed;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .nav-links a:hover {
+            background-color: #f10e65;
+            border-radius: 5px;
+        }
+
+        .white-black-btn {
+            background-color: white;
+            color: black;
+            border: 0px solid;
+            padding: 5px 30px;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .white-black-btn:hover {
+            background-color: rgb(80, 3, 80);
+            color: white;
+        }
+
+        .intro:hover {
+            color: rgb(112, 5, 103);
+            border: 2px solid;
+        }
+
+        .yellow-black-btn {
+            background-color: rgb(238, 176, 105);
+            color: black;
+            border: 0px solid;
+            margin: auto;
+            width: 150px;
+            padding: 5px 20px;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .intro:hover .yellow-black-btn {
+            background-color: rgb(80, 3, 80);
+            color: white;
+        }
+
+        .btn-purple {
+            background-color: #240224;
+            color: aliceblue;
+            font-size: 20px;
+        }
+
+        .btn-purple:hover {
+            background-color: #f360f3;
+        }
+
+        .slide-btn:hover {
+            background-color: #e78d06;
+        }
+
+        .carousel-item img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <section id="s01" class="py-1 w-100" style="background-color:#b42a64;position: sticky;top: 0;z-index: 10;">
+        <div class="container">
+            <div class="text-end">
+                <a href="#">
+                    <i class="fa-brands fa-square-facebook text-primary"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-square-x-twitter text-black"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-instagram text-danger"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-line text-success"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="s02" class="pt-3 w-100" style="background-color: #faf9f9;position: sticky;top:32px;z-index: 10;">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg" style="background-color: #faf9f9;" id="navbarCollapse">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="20241226-ex1.html">
+                        <img src="images/company_logo.jpg" alt="" style="width: 120px;height: 50px;">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto nav-links" style="white-space: nowrap;">
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=歐洲" data-region="歐洲">歐洲</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=大陸" data-region="大陸">大陸</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=紐澳" data-region="紐澳">紐澳</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=美加" data-region="美加">美加</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=中東" data-region="中東">中東</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=日本" data-region="日本">日本</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=韓國" data-region="韓國">韓國</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=東南亞" data-region="東南亞">東南亞</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=遊輪" data-region="遊輪">豪華遊輪</a>
+                            </li>
+                        </ul>
+                        <div class="dropdown mt-1 me-2">
+                            <button class="btn btn-outline-danger dropdown-toggle d-none fs-5 fw-900" type="button"
+                                id="s02_manager_panel_btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                管理者功能
+                            </button>
+
+                            <ul class="dropdown-menu dropdown-content" aria-labelledby="s02_manager_panel_btn">
+                                <li><a class="dropdown-item" href="20241226-ex1-member_control_panel_v1.html">會員管理</a>
+                                </li>
+                                <li><a class="dropdown-item" href="20241226-ex1-orders_control_panel_v1.html">訂單管理</a>
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href="20241226-ex1-process_control_panel_v1.html?region=歐洲">行程管理</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-report_control_panel_v1.html">營業報表</a>
+                                </li>
+                                <li><a class="dropdown-item"
+                                        href="20241226-ex1-member_edit_panel_v1.html#account">帳號管理</a></li>
+                                <li><a class="dropdown-item"
+                                        href="20241226-ex1-member_edit_panel_v1.html#order_query">訂單查詢</a></li>
+                                <li><a class="dropdown-item" href="https://rate.bot.com.tw/xrt?Lang=zh-tw&redirect=true"
+                                        target="_blank">匯率查詢</a></li>
+                                <li><a class="dropdown-item" href="https://www.trivago.com.tw/" target="_blank">旅館查詢</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dropdown mt-1 me-2">
+                            <button class="btn btn-outline-danger dropdown-toggle d-none fs-5 fw-900" type="button"
+                                id="s02_member_panel_btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                會員功能
+                            </button>
+                            <ul class="dropdown-menu dropdown-content" aria-labelledby="s02_member_panel_btn">
+                                <li><a class="dropdown-item"
+                                        href="20241226-ex1-member_edit_panel_v1.html#account">帳號管理</a></li>
+                                <li><a class="dropdown-item"
+                                        href="20241226-ex1-member_edit_panel_v1.html#order_query">訂單查詢</a></li>
+                                <li><a class="dropdown-item" href="https://rate.bot.com.tw/xrt?Lang=zh-tw&redirect=true"
+                                        target="_blank">匯率查詢</a></li>
+                                <li><a class="dropdown-item" href="https://www.trivago.com.tw/" target="_blank">旅館查詢</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="h4 text-success fw-900 me-3 d-none" id="s02_username_showtext"
+                            style="white-space: nowrap;">歡迎會員:<span class="h3 text-warning" id="s02_username_text"
+                                style="white-space: nowrap;"></span></span>
+                    </div>
+                    <div>
+                        <button class="btn btn-danger d-none" data-bs-toggle="logoutmodal" data-bs-target="#logoutModal"
+                            style="white-space: nowrap;" id="s02_logout_btn">登出</button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+    <section id="s03">
+        <div class="container">
+            <div class="mt-3"><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal"
+                    id="add_btn">新增行程</button>
+            </div>
+
+            <div class="container mt-4">
+                <div class="row" id="result-container">
+                    <!-- 插入卡片 -->
+                </div>
+                <nav class="mt-4">
+                    <ul class="pagination justify-content-center" id="pagination">
+                        <!-- 插入分頁按紐 -->
+                    </ul>
+                </nav>
+            </div>
+
+
+        </div>
+        <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+            <div class="modal-test modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-success text-center">
+                        <h1 class="modal-title fs-3 fw-900" id="addModalLabel">新增行程</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body bg-001">
+                        <form id="addprocess" enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">標題</label>
+                                    <input type="text" class="form-control is-invalid" id="addModal_title"
+                                        name="addModal_title">
+                                    <div class="valid-feedback" id="add_title-valid-feedback">符合規則</div>
+                                    <div class="invalid-feedback" id="add_title-invalid-feedback">不符合規則
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">內容</label>
+                                    <textarea name="addModal_content" id="addModal_content"
+                                        class="form-control form-control-lg shadow is-invalid" rows="5"
+                                        cols="30"></textarea>
+                                    <div class="valid-feedback" id="add_content-valid-feedback">符合規則</div>
+                                    <div class="invalid-feedback" id="add_content-invalid-feedback">不符合規則
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <span>上傳圖片</span>
+                                    <input type="file" class="form-control form-control-lg" id="photo" name="photo">
+                                    <div class="valid-feedback">上傳格式為jpeg or png or gif</div>
+                                    <div class="invalid-feedback">不符合上傳格式</div>
+                                    <img src="" alt="" class="img-fluid w-50 mt-3 d-none" id="prveImg">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">區域</label>
+                                    <select id="addModal_region" name="addModal_region"
+                                        class="form-select form-select-lg">
+                                        <option value="歐洲">歐洲</option>
+                                        <option value="大陸">大陸</option>
+                                        <option value="紐澳">紐澳</option>
+                                        <option value="美加">美加</option>
+                                        <option value="中東">中東</option>
+                                        <option value="日本">日本</option>
+                                        <option value="韓國">韓國</option>
+                                        <option value="東南亞">東南亞</option>
+                                        <option value="遊輪">遊輪</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">天數</label>
+                                    <input type="text" class="form-control" id="addModal_days" name="addModal_days">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">去程日期</label>
+                                    <input type="date" class="form-control form-control-lg" id="addModal_startdate"
+                                        name="addModal_startdate">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">回程日期</label>
+                                    <input type="date" class="form-control form-control-lg" id="addModal_enddate"
+                                        name="addModal_enddate">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">航空公司</label>
+                                    <select id="addModal_airplane" name="addModal_airplane"
+                                        class="form-select form-select-lg">
+                                        <option value="中華航空">中華航空</option>
+                                        <option value="長榮航空">長榮航空</option>
+                                        <option value="星宇航空">星宇航空</option>
+                                        <option value="阿聯酋航空">阿聯酋航空</option>
+                                        <option value="豪華遊輪">豪華遊輪</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">團費</label>
+                                    <input type="text" class="form-control is-invalid" id="addModal_cost"
+                                        name="addModal_cost">
+                                    <div class="valid-feedback" id="add_cost-valid-feedback">符合規則</div>
+                                    <div class="invalid-feedback" id="add_cost-invalid-feedback">不符合規則</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">狀態</label>
+                                    <select id="addModal_status" name="addModal_status"
+                                        class="form-select form-select-lg">
+                                        <option value="未成團，可報名">未成團，可報名</option>
+                                        <option value="已成團，報名中">已成團，報名中</option>
+                                        <option value="已額滿">已額滿</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">備註</label>
+                                    <input type="text" class="form-control" id="addModal_remark" name="addModal_remark">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary" id="addModal_ok_btn" type="submit">確認</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-success">
+                        <h1 class="modal-title fs-4 fw-900" id="updateModal">修改行程</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                        <form id="updateprocess" enctype="multipart/form-data">
+                            <div><input type="hidden" id="updateModal_id" name="updateModal_id"></div>
+                            <div><input type="hidden" id="updateModal_oldphotopath" name="updateModal_oldphotopath">
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">標題</label>
+                                <input type="text" class="form-control" id="updateModal_title" name="updateModal_title">
+                                <div class="valid-feedback" id="updateModal_title-valid-feedback">符合規則</div>
+                                <div class="invalid-feedback" id="updateModal_title-invalid-feedback">不符合規則</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">內容</label>
+                                <input type="text" class="form-control is-valid" id="updateModal_content"
+                                    name="updateModal_content">
+                                <div class="valid-feedback" id="updateModal_content-valid-feedback">符合規則</div>
+                                <div class="invalid-feedback" id="updateModal_content-invalid-feedback">不符合規則</div>
+                            </div>
+                            <div class="mb-3">
+                                <span>修改圖片</span>
+                                <input type="file" class="form-control form-control-lg" id="updateModal_photo"
+                                    name="updateModal_photo">
+                                <img src="" alt="" class="img-fluid w-50 mt-3 d-none" id="cardImg" name="cardImg">
+                                <div class="valid-feedback">上傳格式為jpeg or png or gif</div>
+                                <div class="invalid-feedback">不符合上傳格式</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">區域</label>
+                                <select id="updateModal_region" name="updateModal_region"
+                                    class="form-select form-select-lg">
+                                    <option value="歐洲">歐洲</option>
+                                    <option value="大陸">大陸</option>
+                                    <option value="紐澳">紐澳</option>
+                                    <option value="美加">美加</option>
+                                    <option value="中東">中東</option>
+                                    <option value="日本">日本</option>
+                                    <option value="韓國">韓國</option>
+                                    <option value="東南亞">東南亞</option>
+                                    <option value="遊輪">遊輪</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">天數</label>
+                                <input type="text" class="form-control" id="updateModal_days" name="updateModal_days">
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">去程日期</label>
+                                <input type="date" class="form-control form-control-lg" id="updateModal_startdate"
+                                    name="updateModal_startdate">
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">回程日期</label>
+                                <input type="date" class="form-control form-control-lg" id="updateModal_enddate"
+                                    name="updateModal_enddate">
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">航空公司</label>
+                                <select id="updateModal_airplane" name="updateModal_airplane"
+                                    class="form-select form-select-lg">
+                                    <option value="中華航空">中華航空</option>
+                                    <option value="長榮航空">長榮航空</option>
+                                    <option value="星宇航空">星宇航空</option>
+                                    <option value="阿聯酋航空">阿聯酋航空</option>
+                                    <option value="豪華遊輪">豪華遊輪</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">團費</label>
+                                <input type="text" class="form-control is-valid" id="updateModal_cost"
+                                    name="updateModal_cost">
+                                <div class="valid-feedback">符合規則</div>
+                                <div class="invalid-feedback">不符合規則</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">狀態</label>
+                                <select id="updateModal_status" name="updateModal_status"
+                                    class="form-select form-select-lg">
+                                    <option value="未成團，可報名">未成團，可報名</option>
+                                    <option value="已成團，報名中">已成團，報名中</option>
+                                    <option value="已額滿">已額滿</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">備註</label>
+                                <input type="text" class="form-control" id="updateModal_remark"
+                                    name="updateModal_remark">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary" id="updateModal_update_btn">確認修改</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="s11">
+        <div class="footer_content" style="background-color: #530c6e;color: #e6d4f3;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 col-12 left-area">
+                        <div class="mb-sm-5 mb-4 wow animate__animated animate__fadeInUp fadeInUp animate__slow"
+                            data-wow-delay="0s" style="visibility: visible; animation-name: fadeInUp;">
+                            <h1 class="fw-900 mt-5"> <a href="#"
+                                    style="text-decoration: none;color:#e6d4f3">綜彩旅行社有限公司</a></h1>
+                        </div>
+                        <div class="footer-info wow animate__animated animate__fadeInDown animate__slow"
+                            data-wow-delay="0s" style="visibility: visible; animation-name: fadeInDown;">
+                            <ul class="list-unstyled">
+                                <li>統一編號：27560645</li>
+                                <li>交觀甲 第6783號 / 品保 北1513</li>
+                                <li>負責人：吳佳筠 / 聯絡人：徐信杰</li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li>電話：<a href="tel:0225715838" class="d-inline-block">02-2571-5838</a>、<a
+                                        href="tel:0225634633" class="d-inline-block">02-2563-4633</a></li>
+                                <li>傳真：02-2562-2269</li>
+                                <li>地址：104台北市中山區松江路152號６樓603室</li>
+                                <li>信箱：<a href="mailto:colorfultravel@yahoo.com.tw">colorfultravel@yahoo.com.tw</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 wow animate__animated animate__slideInUp animate__slow" data-wow-delay="0s"
+                        style="visibility: visible; animation-name: slideInUp;">
+                        <div class="copyrights-info clearfix mt-4">
+                            <div class="copyrights d-inline-block mr-3 mb-2">Copyright © 綜彩旅行社有限公司 All Rights Reserved
+                            </div>
+                            <div class="copyrights d-inline-block">本網站內容享有著作權，禁止侵害，違者必究。</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="https://kit.fontawesome.com/176a59b465.js" crossorigin="anonymous"></script>
+    <script>
+
+        var flag_addeModal_content = true;
+        var flag_addModal_title = true;
+        var flag_addModal_cost = true;
+        var flag_photo = true;
+        var flag_updateModal_content = true;
+        var flag_updateModal_title = true;
+        var flag_updateModal_cost = true;
+        var flag_updateModal_photo = true;
+        var oldphotopath;
+        $(function () {
+            // 確認uid是否合法
+            if (getCookie("Uid01")) {
+                var JSONdata = {};
+                JSONdata["uid01"] = getCookie("Uid01");
+
+                $.ajax({
+                    type: "POST",
+                    url: "20241226-ex1-process_control_api_v1.php?action=checkuid",
+                    data: JSON.stringify(JSONdata),
+                    dataType: "json",
+                    success: showdata_checkuid,
+                    error: function () {
+                        Swal.fire({
+                            title: "API介接錯誤?",
+                            text: "20241226-ex1-process_control_api_v1.php",
+                            icon: "error"
+                        });
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: "請先登入會員",
+                    icon: "info",
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: "確認",
+                    denyButtonText: `Don't save`,
+                    allowOutsideClick: false
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        location.href = "20241226-ex1.html"
+                    }
+                });
+            }
+
+            //s02 logout按紐監聽
+            $("#s02_logout_btn").click(function () {
+                setCookie("Uid01", "", 7);
+                setCookie("level", "", 7);
+                location.href = "20241226-ex1.html";
+            });
+
+        });
+
+        let allData = [];
+        const pageSize = 3;
+
+        $(document).ready(function () {
+            const params = new URLSearchParams(window.location.search);
+            const regionParam = params.get("region");
+
+            // 1. 點擊 nav-link
+            $(".navbar-nav .nav-link").on("click", function (e) {
+                e.preventDefault();
+                const region = $(this).data("region");
+                fetchData(region);
+                history.pushState(null, "", `?region=${region}`);
+            });
+
+            // 2. 網址傳輸 region 參數
+            if (regionParam) {
+                fetchData(regionParam);
+            }
+
+            function fetchData(region) {
+                console.log("載入地區資料：", region);
+
+                $.ajax({
+                    url: "20241226-ex1-process_control_api_v1.php?action=getcardprocess",
+                    type: "POST",
+                    data: { region: region },
+                    dataType: "json",
+                    success: function (res) {
+                        console.log(res.state);
+                        if (res.state) {
+                            allData = res.data;
+                            renderPagination(1);
+                        } else {
+                            $("#result-container").html(`
+                            <div class="d-flex justify-content-center align-items-center" style="min-height: 300px;">
+                                <div class="text-center w-100 animate__animated animate__fadeIn">
+                                    <p class="text-danger fs-3 fw-bold">${res.message}</p>
+                                </div>
+                            </div>
+                            `);
+                            $("#pagination").html("");
+                        }
+                    },
+                    error: function () {
+                        Swal.fire({
+                            title: "API介接錯誤!",
+                            text: "20241226-ex1-process_control_api_v1.php",
+                            icon: "error"
+                        });
+                    }
+                });
+
+
+            }
+
+            // 渲染單頁資料
+            function renderCards(data) {
+                let html = "";
+                data.forEach(item => {
+                    const collapseId = `collapseTrip${item.id}`; // 每筆卡片資料唯一ID
+                    html += `
+                    <div class="col-sm-6 col-lg-4 p-3">
+                        <div class="card intro align-items-center h-100 shadow border-2">
+                            <div class="row">
+                                <img src="${item.photo}" alt="" class="img-fluid">
+                            </div>
+                            <div class="mt-1 w-100">
+                                <table class="table table-bordered text-center fw-bold">
+                                    <tr>
+                                        <td class="text-bg-success">名稱</td>
+                                        <td class="fs-5 text-bg-danger fw-500">${item.title}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-bg-success">內容</td>
+                                        <td>${item.content}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-bg-success">狀態</td>
+                                        <td>${item.status}</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-bg-success">報名人數</td>
+                                        <td>${item.signups}</td>
+                                    </tr>
+                                </table>
+
+                                <div class="text-center my-3">
+                                    <button class="btn btn-outline-primary btn-sm" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#${collapseId}"
+                                        aria-expanded="false" aria-controls="${collapseId}">
+                                        查看更多
+                                    </button>
+                                </div>
+
+                                <div class="collapse" id="${collapseId}">
+                                    <table class="table table-bordered text-center fw-bold">
+                                        <tr>
+                                            <td class="text-bg-success">區域</td>
+                                            <td>${item.region}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-bg-success">天數</td>
+                                            <td>${item.days}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-bg-success">出發日期</td>
+                                            <td>${item.startdate}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-bg-success">返程日期</td>
+                                            <td>${item.enddate}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-bg-success">航班</td>
+                                            <td>${item.airplane}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-bg-success">團費</td>
+                                            <td>${item.cost}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-bg-success">備註</td>
+                                            <td>${item.remark}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <button class="btn btn-warning me-2" data-bs-toggle="modal"
+                                    data-bs-target="#updateModal" 
+                                    data-id="${item.id}" 
+                                    data-title="${item.title}" 
+                                    data-content="${item.content}" 
+                                    data-photo="${item.photo}"
+                                    data-region="${item.region}"
+                                    data-days="${item.days}" 
+                                    data-startdate="${item.startdate}" 
+                                    data-enddate="${item.enddate}"  
+                                    data-airplane="${item.airplane}" 
+                                    data-cost="${item.cost}" 
+                                    data-status="${item.status}"
+                                    data-remark="${item.remark}" 
+                                    data-oldphotopath="${oldphotopath}"
+                                    id="update_btn">修改
+                                </button>
+                                <button class="btn btn-danger" data-id="${item.id}" data-photo="${item.photo}" id="delete_btn">下架</button>
+                            </div>
+                        </div>
+                    </div>`;
+                });
+                $("#result-container").html(html);
+            }
+
+            // 渲染分頁 + 分頁點擊事件
+            function renderPagination(currentPage) {
+                const totalPages = Math.ceil(allData.length / pageSize);
+                const start = (currentPage - 1) * pageSize;
+                const pageData = allData.slice(start, start + pageSize);
+                renderCards(pageData);
+
+                let pagHTML = '';
+                for (let i = 1; i <= totalPages; i++) {
+                    pagHTML += `<li class="page-item ${i === currentPage ? 'active' : ''}">
+                <a class="page-link" href="#">${i}</a></li>`;
+                }
+                $("#pagination").html(pagHTML);
+
+                $("#pagination .page-link").off("click").on("click", function (e) {
+                    e.preventDefault();
+                    const page = parseInt($(this).text());
+                    renderPagination(page);
+                });
+            }
+        });
+
+
+        function showdata_checkuid(data) {
+            if (data.state) {
+
+                $("#s02_username_showtext").removeClass("d-none");
+                $("#s02_username_text").text(data.data.userName);
+                $("#s02_logout_btn").removeClass("d-none");
+                $("#s12").removeClass("d-none");
+                if (data.data.level != "" && data.data.level === "管理者") {
+
+                    $("#s02_manager_panel_btn").removeClass("d-none");
+                } else if (data.data.level != "") {
+                    $("#s02_member_panel_btn").removeClass("d-none");
+                }
+
+
+                // 即時監聽addModal_title
+                $("#addModal_title").bind("input propertychange", function () {
+                    if ($(this).val().length > 2 && $(this).val().length < 20) {
+
+
+                        $("#addModal_title").removeClass("is-invalid");
+                        $("#addModal_title").addClass("is-valid");
+                        var JSONdata = {};
+                        JSONdata["addModal_title"] = $(this).val();
+                        console.log(JSON.stringify(JSONdata));
+                        $.ajax({
+                            type: "POST",
+                            url: "20241226-ex1-process_control_api_v1.php?action=checkaddtitle",
+                            data: JSON.stringify(JSONdata),
+                            dataType: "json",
+                            success: showdata_add_check_title_uni,
+                            error: function () {
+                                Swal.fire({
+                                    title: "API介接錯誤",
+                                    text: "20241226-ex1-process_control_api_v1.php",
+                                    icon: "error"
+                                });
+                            }
+
+                        });
+                    } else {
+                        $("#addModal_title").removeClass("is-valid");
+                        $("#addModal_title").addClass("is-invalid");
+                        $("#add_title-invalid-feedback").text("不符合規則");
+                        flag_addModal_title = false;
+                    }
+                });
+
+                // 即時監聽addModal_content
+                $("#addModal_content").bind("input propertychange", function () {
+                    if ($(this).val().length > 10 && $(this).val().length < 128) {
+
+
+                        $("#addModal_content").removeClass("is-invalid");
+                        $("#addModal_content").addClass("is-valid");
+                        flag_addModal_content = true;
+                    } else {
+                        $("#addModal_content").removeClass("is-valid");
+                        $("#addModal_content").addClass("is-invalid");
+                        flag_addModal_content = false;
+                    }
+                });
+
+                // 即時監聽addModal_cost
+                $("#addModal_cost").bind("input propertychange", function () {
+                    if ($(this).val().length > 4) {
+                        $("#addModal_cost").removeClass("is-invalid");
+                        $("#addModal_cost").addClass("is-valid");
+                        flag_addModal_cost = true;
+                    } else {
+                        $("#addModal_cost").removeClass("is-valid");
+                        $("#addModal_cost").addClass("is-invalid");
+                        flag_addModal_cost = false;
+                    }
+                });
+
+
+                // 即時監聽行程updateModal_title
+                $("#updateModal_title").bind("input propertychange", function () {
+                    if ($(this).val().length < 5 || $(this).val().length > 20) {
+
+
+                        $("#updateModal_title").removeClass("is-valid");
+                        $("#updateModal_title").addClass("is-invalid");
+                        $("#updateModal_title-invalid-feedback").text("不符合規則");
+                        flag_updateModal_title = false;
+                    } else {
+
+                        var JSONdata = {};
+                        JSONdata["updateModal_title"] = $(this).val();
+                        $.ajax({
+                            type: "POST",
+                            url: "20241226-ex1-process_control_api_v1.php?action=checkupdatetitle",
+                            data: JSON.stringify(JSONdata),
+                            dataType: "json",
+                            success: showdata_update_check_title_uni,
+                            error: function () {
+                                Swal.fire({
+                                    title: "API介接錯誤",
+                                    text: "20241226-ex1-process_control_api_v1.php",
+                                    icon: "error"
+                                });
+                            }
+
+                        });
+
+                        $("#updateModal_title").removeClass("is-invalid");
+                        $("#updateModal_title").addClass("is-valid");
+                        flag_updateModal_title = true;
+                    }
+                });
+
+                //即時監聽 updateModal_content
+                $("#updateModal_content").bind("input propertychange", function () {
+                    if ($(this).val().length > 10 && $(this).val().length < 128) {
+                        $(this).removeClass("is-invalid");
+                        $(this).addClass("is-valid");
+                        flag_updateModal_content = true;
+                    } else {
+                        $(this).removeClass("is-valid");
+                        $(this).addClass("is-invalid");
+                        flag_updateModal_content = false;
+                    }
+                });
+
+                //即時監聽 updateModal_cost
+                $("#updateModal_cost").bind("input propertychange", function () {
+                    if ($(this).val().length > 4) {
+                        $(this).removeClass("is-invalid");
+                        $(this).addClass("is-valid");
+                        flag_updateModal_content = true;
+                    } else {
+                        $(this).removeClass("is-valid");
+                        $(this).addClass("is-invalid");
+                        flag_updateModal_content = false;
+                    }
+                });
+
+
+
+                //即時監聽addModal_photo
+                $("#photo").change(function () {
+                    if (photo.files[0].type == "image/jpeg" || photo.files[0].type == "image/png" || photo.files[0].type == "image/gif") {
+                        $("#prveImg").removeClass("d-none");
+                        $("#prveImg").attr("src", URL.createObjectURL(photo.files[0]));
+                        $("#photo").removeClass("is-invalid");
+                        $("#photo").addClass("is-valid");
+
+                        flag_photo = true;
+                    } else {
+                        $("#photo").removeClass("is-valid");
+                        $("#photo").addClass("is-invalid");
+                        $("#prveImg").addClass("d-none");
+
+                        flag_photo = false;
+                    }
+                });
+
+                //即時監聽updateModal_photo
+                $("#updateModal_photo").change(function () {
+                    if (updateModal_photo.files[0].type == "image/jpeg" || updateModal_photo.files[0].type == "image/png" || updateModal_photo.files[0].type == "image/gif") {
+                        $("#cardImg").removeClass("d-none");
+                        $("#cardImg").attr("src", URL.createObjectURL(updateModal_photo.files[0]));
+                        $("#updateModal_photo").removeClass("is-invalid");
+                        $("#updateModal_photo").addClass("is-valid");
+                        $("#updateModal_oldphotopath") = $oldphotopath;
+
+                        flag_updateModal__photo = true;
+                    } else {
+                        $("#updateModal_photo").removeClass("is-valid");
+                        $("#updateModal_photo").addClass("is-invalid");
+                        $("#cardImg").addClass("d-none");
+
+                        flag_updateModal_photo = false;
+
+                        // alert("只支援jpeg or png!");
+                    }
+                });
+
+                //按紐監聽 addModal_ok_btn
+                $("#addModal_ok_btn").click(function (e) {
+                    e.preventDefault();
+                    if (flag_addModal_title && flag_addModal_content && flag_addModal_cost && flag_photo) {
+                        var formData = new FormData($("#addprocess")[0]);
+                        $.ajax({
+                            type: "POST",
+                            url: "20241226-ex1-process_control_api_v1.php?action=addprocess",
+                            data: formData,
+                            dataType: "json",
+                            cache: false,
+                            contentType: false,
+                            processData: false,
+                            success: showdata_addprocess,
+                            error: function () {
+                                Swal.fire({
+                                    title: "API介接錯誤?",
+                                    text: "20241226-ex1-process_control_api_v1.php",
+                                    icon: "error"
+                                });
+                            }
+                        });
+
+
+                    } else {
+                        Swal.fire({
+                            title: "欄位有錯誤",
+                            icon: "error"
+                        });
+                    }
+                });
+
+
+                //按紐監聽 update_btn
+                $("#result-container").on("click", "#update_btn", function () {
+                    $("#updateModal_id").val($(this).data("id"))
+                    $("#updateModal_title").val($(this).data("title"));
+                    $("#updateModal_content").val($(this).data("content"));
+
+                    oldphotopath = $(this).data("photo");
+                    $("#updateModal_oldphotopath").val(oldphotopath);
+                    $("#cardImg").removeClass("d-none");
+                    $("#cardImg").attr("src", oldphotopath);
+                    $("#updateModal_region").val($(this).data("region"));
+                    $("#updateModal_days").val($(this).data("days"));
+                    $("#updateModal_startdate").val($(this).data("startdate"));
+                    $("#updateModal_enddate").val($(this).data("enddate"));
+                    $("#updateModal_airplane").val($(this).data("airplane"));
+                    $("#updateModal_cost").val($(this).data("cost"));
+                    $("#updateModal_status").val($(this).data("status"));
+                    $("#updateModal_remark").val($(this).data("remark"));
+                });
+
+
+                //按紐監聽 delete_btn
+                $("#result-container").on("click", "#delete_btn", function () {
+                    Swal.fire({
+                        title: "確認刪除該行程",
+                        showDenyButton: true,
+                        showCancelButton: false,
+                        confirmButtonText: "確認",
+                        denyButtonText: `取消`,
+                        allowOutsideClick: false
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            console.log($(this).data("id"));
+                            console.log($(this).data("uploadpath"));
+
+                            var JSONdata = {};
+                            JSONdata["id"] = $(this).data("id");
+                            JSONdata["photo"] = $(this).data("photo");
+                            console.log(JSON.stringify(JSONdata));
+
+                            $.ajax({
+                                type: "DELETE",
+                                url: "20241226-ex1-process_control_api_v1.php?action=deleteprocess",
+                                data: JSON.stringify(JSONdata),
+                                dataType: "json",
+                                success: showdata_deleteprocess,
+                                error: function () {
+                                    Swal.fire({
+                                        title: "API介接錯誤!",
+                                        text: "20241226-ex1-process_control_api_v1.php?",
+                                        icon: "error"
+                                    });
+                                }
+                            });
+                        }
+                    });
+                });
+
+                //按紐監聽 updateModal_update_btn
+                $("#updateModal_update_btn").click(function (e) {
+                    e.preventDefault();
+
+                    if (flag_updateModal_title && flag_updateModal_content && flag_updateModal_cost && flag_updateModal_photo) {
+                        var formData = new FormData($("#updateprocess")[0]);
+                        $.ajax({
+                            type: "POST",
+                            url: "20241226-ex1-process_control_api_v1.php?action=updateprocess",
+                            data: formData,
+                            dataType: "json",
+                            cache: false,
+                            contentType: false,
+                            processData: false,
+                            success: showdata_updateprocess,
+                            error: function () {
+                                Swal.fire({
+                                    title: "API介接錯誤?",
+                                    text: "20241226-ex1-process_control_api_v1.php",
+                                    icon: "error"
+                                });
+                            }
+                        });
+
+
+                    } else {
+                        Swal.fire({
+                            title: "欄位有錯誤",
+                            icon: "error"
+                        });
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: "請先登入會員!",
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: "確認",
+                    denyButtonText: `Don't save`,
+                    allowOutsideClick: false
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        location.href = "20241226-ex1.html";
+                    }
+                });
+            }
+        }
+
+        function showdata_add_check_title_uni(data) {
+            if (data.state) {
+                $("#addModal_title").removeClass("is-invalid");
+                $("#addModal_title").addClass("is-valid");
+                $("#add_title-valid-feedback").text(data.message);
+                flag_addModal_title = true;
+            } else {
+                $("#addModal_title").removeClass("is-valid");
+                $("#addModal_title").addClass("is-invalid");
+                $("#add_title-invalid-feedback").text(data.message);
+                flag_addModal_title = false;
+            }
+        }
+
+        function showdata_update_check_title_uni(data) {
+            if (data.state) {
+                $("#updateModal_title").removeClass("is-invalid");
+                $("#updateModal_title").addClass("is-valid");
+                $("#updateModal_title-valid-feedback").text(data.message);
+                flag_updateModal_title = true;
+            } else {
+                $("#updateModal_title").removeClass("is-valid");
+                $("#updateModal_title").addClass("is-invalid");
+                $("#updateModal_title-invalid-feedback").text(data.message);
+                flag_updateModal_title = false;
+            }
+        }
+
+        // 新增行程
+        function showdata_addprocess(data) {
+            if (data.state) {
+                Swal.fire({
+                    title: data.message,
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: "確認",
+                    denyButtonText: `Don't save`,
+                    icon: "success",
+                    allowOutsideClick: false
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        location.href = "20241226-ex1-process_control_panel_v1.html?region=歐洲";
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: data.message,
+                    icon: "error"
+                });
+            }
+        }
+
+        // 修改行程
+        function showdata_updateprocess(data) {
+            if (data.state) {
+                Swal.fire({
+                    title: data.message,
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: "確認",
+                    denyButtonText: `Don't save`,
+                    icon: "success",
+                    allowOutsideClick: false
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        if (document.referrer) {
+                            location.href = "20241226-ex1-process_control_panel_v1.html?region=歐洲";
+                        } else {
+                            window.history.back();
+                        }
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: data.message,
+                    icon: "error"
+                });
+            }
+        }
+
+        // 刪除會員資料
+        function showdata_deleteprocess(data) {
+            if (data.state) {
+                Swal.fire({
+                    title: data.message,
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: "確認",
+                    denyButtonText: `Don't save`,
+                    icon: "success",
+                    allowOutsideClick: false
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        location.href = "20241226-ex1-process_control_panel_v1.html?region=歐洲";
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: data.message,
+                    icon: "error"
+                });
+            }
+        }
+
+        // from w3s Cookie
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+    </script>
+
+
+</body>
+
+</html>

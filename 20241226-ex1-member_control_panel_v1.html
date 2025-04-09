@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員管理</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" />
+    <style>
+        body {
+            font-family: "Kiwi Maru", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .dropdown-content {
+            position: fixed;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .nav-links a:hover {
+            background-color: #f10e65;
+            border-radius: 5px;
+        }
+
+        .white-black-btn {
+            background-color: white;
+            color: black;
+            border: 0px solid;
+            padding: 5px 30px;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .white-black-btn:hover {
+            background-color: rgb(80, 3, 80);
+            color: white;
+        }
+
+        .intro:hover {
+            color: rgb(112, 5, 103);
+            border: 2px solid;
+        }
+
+        .yellow-black-btn {
+            background-color: rgb(238, 176, 105);
+            color: black;
+            border: 0px solid;
+            margin: auto;
+            width: 150px;
+            padding: 5px 20px;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .intro:hover .yellow-black-btn {
+            background-color: rgb(80, 3, 80);
+            color: white;
+        }
+
+        .btn-purple {
+            background-color: #240224;
+            color: aliceblue;
+            font-size: 20px;
+        }
+
+        .btn-purple:hover {
+            background-color: #f360f3;
+        }
+
+        .slide-btn:hover {
+            background-color: #e78d06;
+        }
+
+        .carousel-item img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .dataTables_paginate {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dataTables_paginate .paginate_button {
+            margin: 0 5px;
+            padding: 8px 14px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            border: none;
+            color: white;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #member {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+         #member thead {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        #member tbody tr:nth-child(odd) {
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+        }
+
+        #member tbody tr:nth-child(even) {
+            background: linear-gradient(135deg, #c3e6cb, #28a745);
+        }
+
+        #member tbody tr:hover {
+            background: linear-gradient(135deg, #ff7b00, #ff4800);
+            color: white;
+            transition: 0.3s ease-in-out;
+        }
+
+        #member th {
+            text-align: center;
+        }
+
+        #member td {
+            vertical-align: middle;
+        }
+
+        #member button {
+            padding: 5px 10px;
+            border-radius: 20px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        #member button.btn-warning {
+            background: linear-gradient(135deg, #ffb703, #ff8c00);
+            color: white;
+        }
+
+        #member button.btn-warning:hover {
+            background: linear-gradient(135deg, #ff8c00, #ffb703);
+            transform: scale(1.1);
+        }
+
+        #member button.btn-danger {
+            background: linear-gradient(135deg, #d90429, #ff073a);
+            color: white;
+        }
+
+        #member button.btn-danger:hover {
+            background: linear-gradient(135deg, #ff073a, #d90429);
+            transform: scale(1.1);
+        }
+
+
+        .dataTables_paginate .paginate_button:hover {
+            background: linear-gradient(135deg, #2575fc, #6a11cb);
+            transform: scale(1.1);
+        }
+
+        .dataTables_paginate .paginate_button.current {
+            background: linear-gradient(135deg, #ff7b00, #ff4800);
+            color: white;
+            border: none;
+            box-shadow: 0 0 10px rgba(255, 120, 0, 0.8);
+        }
+
+        .dataTables_paginate .paginate_button.disabled {
+            background: #ddd;
+            color: #888;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        #profileImg {
+            border: 3px solid #28a745;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <section id="s01" class="py-1 w-100" style="background-color:#b42a64;position: sticky;top: 0;z-index: 10;">
+        <div class="container">
+            <div class="text-end">
+                <a href="#">
+                    <i class="fa-brands fa-square-facebook text-primary"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-square-x-twitter text-black"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-instagram text-danger"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-line text-success"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="s02" class="pt-3 w-100" style="background-color: #faf9f9;position: sticky;top:32px;z-index: 10;">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg" style="background-color: #faf9f9;">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="20241226-ex1.html">
+                        <img src="images/company_logo.jpg" alt="" style="width: 120px;height: 50px;">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto nav-links" style="white-space: nowrap;">
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=歐洲" data-region="歐洲">歐洲</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=大陸" data-region="大陸">大陸</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=紐澳" data-region="紐澳">紐澳</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=美加" data-region="美加">美加</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=中東" data-region="中東">中東</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=日本" data-region="日本">日本</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=韓國" data-region="韓國">韓國</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=東南亞" data-region="東南亞">東南亞</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=遊輪" data-region="遊輪">豪華遊輪</a>
+                            </li>
+                        </ul>
+                        <div class="dropdown mt-1 me-2">
+                            <button class="btn btn-outline-danger dropdown-toggle d-none fs-5 fw-900" type="button"
+                                id="s02_manager_panel_btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                管理者功能
+                            </button>
+                            <ul class="dropdown-menu dropdown-content" aria-labelledby="s02_manager_panel_btn">
+                                <li><a class="dropdown-item" href="20241226-ex1-member_control_panel_v1.html"
+                                        >會員管理</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-orders_control_panel_v1.html"
+                                        >訂單管理</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-process_control_panel_v1.html?region=歐洲"
+                                        >行程管理</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-report_control_panel_v1.html"
+                                        >營業報表</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-member_edit_panel_v1.html#account"
+                                        >帳號管理</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-member_edit_panel_v1.html#order_query"
+                                        >訂單查詢</a></li>
+                                <li><a class="dropdown-item" href="https://rate.bot.com.tw/xrt?Lang=zh-tw&redirect=true"
+                                        target="_blank">匯率查詢</a></li>
+                                <li><a class="dropdown-item" href="https://www.trivago.com.tw/" target="_blank">旅館查詢</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dropdown mt-1 me-2">
+                            <button class="btn btn-outline-danger dropdown-toggle d-none fs-5 fw-900" type="button"
+                                id="s02_member_panel_btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                會員功能
+                            </button>
+                            <ul class="dropdown-menu dropdown-content" aria-labelledby="s02_member_panel_btn">
+                                <li><a class="dropdown-item" href="20241226-ex1-member_edit_panel_v1.html#account"
+                                        >帳號管理</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-member_edit_panel_v1.html#order_query"
+                                        >訂單查詢</a></li>
+                                <li><a class="dropdown-item" href="https://rate.bot.com.tw/xrt?Lang=zh-tw&redirect=true"
+                                        target="_blank">匯率查詢</a></li>
+                                <li><a class="dropdown-item" href="https://www.trivago.com.tw/" target="_blank">旅館查詢</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="h4 text-success fw-900 me-3 d-none" id="s02_username_showtext"
+                            style="white-space: nowrap;">歡迎會員:<span class="h3 text-warning" id="s02_username_text"
+                                style="white-space: nowrap;"></span></span>
+                    </div>
+                    <div>
+                        <button class="btn btn-danger d-none" data-bs-toggle="logoutmodal" data-bs-target="#logoutModal"
+                            style="white-space: nowrap;" id="s02_logout_btn">登出</button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+    <section id="s03" class="my-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <table id="member" class="shadow-lg my-3 table-rwd display w-100 text-center"
+                        style="white-space: nowrap;">
+                        <thead>
+                            <tr>
+                                <th>編號</th>
+                                <th>帳號</th>
+                                <th>電話</th>
+                                <th>住址</th>
+                                <th>信箱</th>
+                                <th>圖像</th>
+                                <th>消費金額</th>
+                                <th>會員等級</th>
+                                <th>註冊時間</th>
+                                <th>功能1</th>
+                                <th>功能2</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-success">
+                        <h1 class="modal-title fs-4 fw-900" id="updateModal">會員資料更新</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="updateuser" enctype="multipart/form-data">
+                            <div><input type="hidden" id="updateModal_id" name="updateModal_id"></div>
+                            <div><input type="hidden" id="updateModal_oldphotopath" name="updateModal_oldphotopath"></div>
+                            <div class="mb-3 text-center">
+                                <img id="profileImg" name="profileImg" src="default-avatar.png"
+                                    class="rounded-circle img-fluid" width="120" alt="會員頭像">
+                                <input type="file" id="updateModal_uploadPath" name="updateModal_uploadPath"
+                                    class="form-control mt-2">
+                                    <div class="valid-feedback">上傳格式為jpeg or png or gif or webp</div>
+                                    <div class="invalid-feedback">不符合上傳格式</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">帳號</label>
+                                <input type="text" class="form-control is-valid" id="updateModal_username"
+                                    name="updateModal_username">
+                                <div class="valid-feedback" id="updateModal_username-valid-feedback">符合規則</div>
+                                <div class="invalid-feedback" id="updateModal_username-invalid-feedback">不符合規則</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">電話</label>
+                                <input type="text" class="form-control is-valid" id="updateModal_tel"
+                                    name="updateModal_tel">
+                                <div class="valid-feedback" id="updateModal_tel-valid-feedback">符合規則</div>
+                                <div class="invalid-feedback" id="updateModal_tel-invalid-feedback">不符合規則</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">住址</label>
+                                <input type="text" class="form-control is-valid" id="updateModal_addr"
+                                    name="updateModal_addr">
+                                <div class="valid-feedback">符合規則</div>
+                                <div class="invalid-feedback">不符合規則</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="" class="form-label">Email</label>
+                                <input type="text" class="form-control is-valid" id="updateModal_email"
+                                    name="updateModal_email">
+                                <div class="valid-feedback">符合規則</div>
+                                <div class="invalid-feedback">不符合規則</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="level" class="form-label">會員等級</label>
+                                <select class="form-select" id="updateModal_level" name="updateModal_level">
+                                    <option value="普通會員">普通會員</option>
+                                    <option value="VIP會員">VIP會員</option>
+                                    <option value="白金會員">白金會員</option>
+                                    <option value="管理者">管理者</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                        <button type="button" class="btn btn-primary" id="updateModal_update_btn">確認修改</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="s11">
+        <div class="footer_content" style="background-color: #530c6e;color: #e6d4f3;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 col-12 left-area">
+                        <div class="mb-sm-5 mb-4 wow animate__animated animate__fadeInUp fadeInUp animate__slow"
+                            data-wow-delay="0s" style="visibility: visible; animation-name: fadeInUp;">
+                            <h1 class="fw-900 mt-5"> <a href="#"
+                                    style="text-decoration: none;color:#e6d4f3">綜彩旅行社有限公司</a></h1>
+                        </div>
+                        <div class="footer-info wow animate__animated animate__fadeInDown animate__slow"
+                            data-wow-delay="0s" style="visibility: visible; animation-name: fadeInDown;">
+                            <ul class="list-unstyled">
+                                <li>統一編號：27560645</li>
+                                <li>交觀甲 第6783號 / 品保 北1513</li>
+                                <li>負責人：吳佳筠 / 聯絡人：徐信杰</li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li>電話：<a href="tel:0225715838" class="d-inline-block">02-2571-5838</a>、<a
+                                        href="tel:0225634633" class="d-inline-block">02-2563-4633</a></li>
+                                <li>傳真：02-2562-2269</li>
+                                <li>地址：104台北市中山區松江路152號６樓603室</li>
+                                <li>信箱：<a href="mailto:colorfultravel@yahoo.com.tw">colorfultravel@yahoo.com.tw</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 wow animate__animated animate__slideInUp animate__slow" data-wow-delay="0s"
+                        style="visibility: visible; animation-name: slideInUp;">
+                        <div class="copyrights-info clearfix mt-4">
+                            <div class="copyrights d-inline-block mr-3 mb-2">Copyright © 綜彩旅行社有限公司 All Rights Reserved
+                            </div>
+                            <div class="copyrights d-inline-block">本網站內容享有著作權，禁止侵害，違者必究。</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="https://kit.fontawesome.com/176a59b465.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script>
+        // DataTables
+        $(document).ready(function () {
+            $('#member').DataTable({
+                "paging": true,
+                "searching": true,
+                "searchHighlight": true,
+                "pageLength": 5,
+                "ordering": true,
+                "responsive": true,
+                "fixedHeader": true,
+                "lengthMenu": [5, 10, 25, 50],
+                "pagingType": "full_numbers",
+                "ajax": {
+                    "url": "20241226-ex1-member_control_api_v1.php?action=getalldata",
+                    "dataSrc": "data",
+                },
+                language: {
+                    "sEmptyTable": "表格中沒有資料",
+                    "sInfo": "顯示 _START_ 到 _END_ 筆，共 _TOTAL_ 筆資料",
+                    "sInfoEmpty": "顯示 0 到 0 筆，共 0 筆資料",
+                    "sInfoFiltered": "(從 _MAX_ 筆資料過濾)",
+                    "sLengthMenu": "每頁顯示 _MENU_ 筆資料",
+                    "sLoadingRecords": "載入中...",
+                    "sProcessing": "處理中...",
+                    "sSearch": "搜尋:",
+                    "sSearchPlaceholder": "請輸入搜尋內容",
+                    "sThousands": ",",
+                    "sZeroRecords": "沒有符合的資料",
+                    "oPaginate": {
+                        "sFirst": "首頁 ",
+                        "sPrevious": "上一頁",
+                        "sNext": "下一頁",
+                        "sLast": "尾頁"
+                    },
+                    "oAria": {
+                        "sSortAscending": ": 以升冪排序",
+                        "sSortDescending": ": 以降冪排序"
+                    }
+                },
+                dom: 'frtilp',
+                responsive: true,
+                "columnDefs": [
+                    {
+                        "targets": 4,
+                        "visible": false
+                    }
+                ],
+                "columns": [
+                    { "data": "id" },
+                    { "data": "userName" },
+                    { "data": "tel" },
+                    { "data": "addr" },
+                    { "data": "email" },
+                    {
+                        "data": "uploadPath",
+                        "render": function (data, type, item) {
+                            return item.uploadPath ? `<img src="${item.uploadPath}" class="rounded-circle img-fluid" style="width:100px">` : "無圖像";
+                        }
+                    },
+                    {
+                        "data": "spent",
+                        "render": function (data, type, item) {
+                            return `NT$${item.spent.toLocaleString("en-US")}`;
+                        }
+                    },
+                    { "data": "level" },
+                    { "data": "created_at" },
+                    {
+                        "data": null,
+                        "render": function (data, type, item) {
+                            return `<button class="btn btn-warning me-2 update_btn" 
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#updateModal"
+                                    data-id="${item.id}" 
+                                    data-username="${item.userName}" 
+                                    data-tel="${item.tel}" 
+                                    data-addr="${item.addr}" 
+                                    data-email="${item.email}" 
+                                    data-uploadpath="${item.uploadPath}" 
+                                    data-level="${item.level}">更新</button>`;
+                        }
+                    },
+                    {
+                        "data": null,
+                        "render": function (data, type, item) {
+                            return `<button class="btn btn-danger delete_btn" 
+                                    data-id="${item.id}" 
+                                    data-uploadpath="${item.uploadPath}">刪除</button>`;
+                        }
+
+                    },
+                ]
+            });
+        });
+
+        var flag_updateModal_email = true;
+        var flag_updateModal_tel = true;
+        var flag_updateModal_userName = true;
+        var flag_updateModal_level = true;
+        var flag_updateModal_addr = true;
+        var flag_updateModal_uploadPath = true;
+        var u_id;
+        $(function () {
+            // 確認會員uid是否合法
+            if (getCookie("Uid01")) {
+                var JSONdata = {};
+                JSONdata["uid01"] = getCookie("Uid01");
+                console.log(JSON.stringify(JSONdata));
+
+                $.ajax({
+                    type: "POST",
+                    url: "20241226-ex1-member_control_api_v1.php?action=checkuid",
+                    data: JSON.stringify(JSONdata),
+                    dataType: "json",
+                    success: showdata_checkuid,
+                    error: function () {
+                        Swal.fire({
+                            title: "API介接錯誤?",
+                            text: "20241226-ex1-member_control_api_v1.php",
+                            icon: "error"
+                        });
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: "請先登入會員",
+                    icon: "info",
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: "確認",
+                    denyButtonText: `Don't save`,
+                    allowOutsideClick: false
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        location.href = "20241226-ex1.html"
+                    }
+                });
+            }
+
+            $("#s02_logout_btn").click(function () {
+                setCookie("Uid01", "", 7);
+                location.href = "20241226-ex1.html";
+            });
+        });
+
+
+        function showdata_checkuid(data) {
+            console.log(data);
+            if (data.state) {
+                $("#s02_username_showtext").removeClass("d-none");
+                $("#s02_username_text").text(data.data.userName);
+                $("#s02_logout_btn").removeClass("d-none");
+                $("#s12").removeClass("d-none");
+                if (data.data.level != "" && data.data.level === "管理者") {
+
+                    $("#s02_manager_panel_btn").removeClass("d-none");
+                } else if (data.data.level != "") {
+                    $("#s02_member_panel_btn").removeClass("d-none");
+                }
+
+                // 即時監聽updateModal_uploadPath
+                $("#updateModal_uploadPath").change(function () {
+                    if (updateModal_uploadPath.files[0].type == "image/jpeg" || updateModal_uploadPath.files[0].type == "image/png" || updateModal_uploadPath.files[0].type == "image/gif"
+                     || updateModal_uploadPath.files[0].type == "image/webp") {
+                        console.log(URL.createObjectURL(updateModal_uploadPath.files[0]));
+                        $("#profileImg").removeClass("d-none");
+                        $("#profileImg").attr("src", URL.createObjectURL(updateModal_uploadPath.files[0]));
+                        $("#updateModal_uploadPath").removeClass("is-invalid");
+                        $("#updateModal_uploadPath").addClass("is-valid");
+                        $("#updateModal_oldphotopath") = $oldphotopath;
+
+                        flag_updateModal_uploadPath = true;
+                    } else {
+                        $("#updateModal_uploadPath").removeClass("is-valid");
+                        $("#updateModal_uploadPath").addClass("is-invalid");
+                        $("#profileImg").addClass("d-none");
+
+                        flag_updateModal_uploadPath = false;
+                    }
+                });
+
+                // 即時監聽updateModal_username
+                $("#updateModal_username").bind("input propertychange", function () {
+                    if ($(this).val().length > 2 && $(this).val().length < 24) {
+                        var JSONdata = {};
+                        JSONdata["username"] = $("#updateModal_username").val();
+                        console.log(JSON.stringify(JSONdata));
+                        $.ajax({
+                            type: "POST",
+                            url: "20241226-ex1-member_control_api_v1.php?action=checkusername",
+                            data: JSON.stringify(JSONdata),
+                            dataType: "json",
+                            success: showdata_member_check_username_reg_uni,
+                            error: function () {
+                                Swal.fire({
+                                    title: "API介接錯誤",
+                                    text: "20241226-ex1-member_control_api_v1.php",
+                                    icon: "error"
+                                });
+                            }
+                        });
+
+                    } else {
+                        $(this).removeClass("is-valid");
+                        $(this).addClass("is-invalid");
+                        $("#updateModal_username-invalid-feedback").text("不符合規則");
+                        flag_updateModal_userName = false;
+                    }
+                });
+
+                //即時監聽 updateModal_tel
+                $("#updateModal_tel").bind("input propertychange", function () {
+                    if ($(this).val().length != 10) {
+
+
+                        $("#updateModal_tel").removeClass("is-valid");
+                        $("#updateModal_tel").addClass("is-invalid");
+                        $("#updateModal_tel-invalid-feedback").text("不符合規則");
+                        flag_updateModal_tel = false;
+                    } else {
+
+                        var JSONdata = {};
+                        JSONdata["updateModal_tel"] = $(this).val();
+                        console.log(JSON.stringify(JSONdata));
+                        $.ajax({
+                            type: "POST",
+                            url: "20241226-ex1-member_control_api_v1.php?action=checkupdatetel",
+                            data: JSON.stringify(JSONdata),
+                            dataType: "json",
+                            success: showdata_member_check_tel_reg_uni,
+                            error: function () {
+                                Swal.fire({
+                                    title: "API介接錯誤",
+                                    text: "20241226-ex1-member_control_api_v1.php",
+                                    icon: "error"
+                                });
+                            }
+
+                        });
+
+                        $("#updateModal_tel").removeClass("is-invalid");
+                        $("#updateModal_tel").addClass("is-valid");
+                        flag_updateModal_tel = true;
+                    }
+                });
+
+                // 即時監聽 updateModal_email
+                $("#updateModal_email").bind("input propertychange", function () {
+                    if ($(this).val().length > 2 && $(this).val().length < 48) {
+                        $(this).removeClass("is-invalid");
+                        $(this).addClass("is-valid");
+                        flag_updateModal_email = true;
+                    } else {
+                        $(this).removeClass("is-valid");
+                        $(this).addClass("is-invalid");
+                        flag_updateModal_email = false;
+                    }
+                });
+
+                // 即時監聽 update_btn
+                $(document).on("click", ".update_btn", function () {
+                    u_id = $(this).data("id");
+
+                    var oldphotopath = $(this).data("uploadpath");
+                    console.log(oldphotopath);
+                    $("#updateModal_oldphotopath").val(oldphotopath);
+                    $("#profileImg").removeClass("d-none");
+                    $("#profileImg").attr("src", oldphotopath ? oldphotopath : "default-avatar.png");
+                    $("#updateModal_id").val($(this).data("id"));
+                    $("#updateModal_username").val($(this).data("username"));
+                    $("#updateModal_tel").val($(this).data("tel"));
+                    $("#updateModal_addr").val($(this).data("addr"));
+                    $("#updateModal_email").val($(this).data("email"));
+                    $("#updateModal_level").val($(this).data("level"));
+                });
+
+                // 即時監聽 updateModal_delete_btn
+                $(document).on("click", ".delete_btn", function () {
+                    console.log($(this).data("id"));
+                    console.log($(this).data("uploadpath"));
+                    Swal.fire({
+                        title: "確認刪除該會員",
+                        showDenyButton: true,
+                        showCancelButton: false,
+                        confirmButtonText: "確認",
+                        denyButtonText: `取消`,
+                        allowOutsideClick: false
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            console.log($(this).data("id"));
+                            console.log($(this).data("uploadpath"));
+
+                            var JSONdata = {};
+                            JSONdata["id"] = $(this).data("id");
+                            JSONdata["uploadpath"] = $(this).data("uploadpath");
+                            console.log(JSON.stringify(JSONdata));
+
+                            $.ajax({
+                                type: "DELETE",
+                                url: "20241226-ex1-member_control_api_v1.php?action=deleteuser",
+                                data: JSON.stringify(JSONdata),
+                                dataType: "json",
+                                success: showdata_deleteuser,
+                                error: function () {
+                                    Swal.fire({
+                                        title: "API介接錯誤!",
+                                        text: "20241226-ex1-member_control_api_v1.php?action=deleteuser",
+                                        icon: "error"
+                                    });
+                                }
+                            });
+                        }
+                    });
+                });
+
+                //按紐監聽 updateModal_update_btn
+                $("#updateModal_update_btn").click(function (e) {
+                    e.preventDefault();
+                    if (flag_updateModal_userName && flag_updateModal_tel && flag_updateModal_addr && flag_updateModal_email
+                        && flag_updateModal_level && flag_updateModal_uploadPath) {
+                        var formData = new FormData($("#updateuser")[0]);
+                        console.log($("#updateModal_id").val());
+                        $.ajax({
+                            type: "POST",
+                            url: "20241226-ex1-member_control_api_v1.php?action=updateuser",
+                            data: formData,
+                            dataType: "json",
+                            cache: false,
+                            contentType: false,
+                            processData: false,
+                            success: showdata_updateuser,
+                            error: function () {
+                                Swal.fire({
+                                    title: "API介接錯誤?",
+                                    text: "20241226-ex1-member_control_api_v1.php",
+                                    icon: "error"
+                                });
+                            }
+                        });
+
+
+                    } else {
+                        Swal.fire({
+                            title: "欄位有錯誤",
+                            icon: "error"
+                        });
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: "請先登入會員!",
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: "確認",
+                    denyButtonText: `Don't save`,
+                    allowOutsideClick: false
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        location.href = "20241226-ex1.html";
+                    }
+                });
+            }
+        }
+
+        // 檢查會員註冊輸入的帳號是否重複
+        function showdata_member_check_username_reg_uni(data) {
+            console.log(data);
+            if (data.state) {
+                $("#updateModal_username").removeClass("is-invalid");
+                $("#updateModal_username").addClass("is-valid");
+                flag_updateModal_userName = true;
+                $("#updateModal_username-valid-feedback").text(data.message);
+            } else {
+                $("#updateModal_username").removeClass("is-valid");
+                $("#updateModal_username").addClass("is-invalid");
+                $("#updateModal_username-invalid-feedback").text(data.message);
+                flag_updateModal_userName = false;
+            }
+        }
+
+        function showdata_member_check_tel_reg_uni(data) {
+            console.log(data);
+            if (data.state) {
+                $("#updateModal_tel").removeClass("is-invalid");
+                $("#updateModal_tel").addClass("is-valid");
+                $("#updateModal_tel-valid-feedback").text(data.message);
+                flag_updateModal_tel = true;
+            } else {
+                $("#updateModal_tel").removeClass("is-valid");
+                $("#updateModal_tel").addClass("is-invalid");
+                $("#updateModal_tel-invalid-feedback").text(data.message);
+                flag_updateModal_tel = false;
+            }
+        }
+
+
+
+        // 更新會員資料
+        function showdata_updateuser(data) {
+            console.log(data);
+            if (data.state) {
+                Swal.fire({
+                    title: data.message,
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: "確認",
+                    denyButtonText: `Don't save`,
+                    icon: "success",
+                    allowOutsideClick: false
+                }).then((result) => {
+                    /* Read more about isConfirmed, isDenied below */
+                    if (result.isConfirmed) {
+                        location.href = "20241226-ex1-member_control_panel_v1.html";
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: data.message,
+                    icon: "error"
+                });
+            }
+        }
+
+        // 刪除會員資料
+        function showdata_deleteuser(data) {
+            console.log(data);
+            if (data.state) {
+                Swal.fire({
+                    title: data.message,
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: "確認",
+                    denyButtonText: `Don't save`,
+                    icon: "success",
+                    allowOutsideClick: false
+                }).then((result) => {
+                    /* Read more about isConfirmed, isDenied below */
+                    if (result.isConfirmed) {
+                        location.href = "20241226-ex1-member_control_panel_v1.html";
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: data.message,
+                    icon: "error"
+                });
+            }
+        }
+
+        // from w3s Cookie
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+    </script>
+
+
+</body>
+
+</html>

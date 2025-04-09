@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>營業報表</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Iansui&family=Kiwi+Maru&family=Noto+Sans+TC:wght@100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: "Kiwi Maru", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .dropdown-content {
+            position: fixed;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .nav-links a:hover {
+            background-color: #f10e65;
+            border-radius: 5px;
+        }
+
+        .white-black-btn {
+            background-color: white;
+            color: black;
+            border: 0px solid;
+            padding: 5px 30px;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .white-black-btn:hover {
+            background-color: rgb(80, 3, 80);
+            color: white;
+        }
+
+        .intro:hover {
+            color: rgb(112, 5, 103);
+            border: 2px solid;
+        }
+
+        .yellow-black-btn {
+            background-color: rgb(238, 176, 105);
+            color: black;
+            border: 0px solid;
+            margin: auto;
+            width: 150px;
+            padding: 5px 20px;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .intro:hover .yellow-black-btn {
+            background-color: rgb(80, 3, 80);
+            color: white;
+        }
+
+        .btn-purple {
+            background-color: #240224;
+            color: aliceblue;
+            font-size: 20px;
+        }
+
+        .btn-purple:hover {
+            background-color: #f360f3;
+        }
+
+        .slide-btn:hover {
+            background-color: #e78d06;
+        }
+
+        .carousel-item img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .nav-pills .nav-link {
+            font-size: 32px;
+            color: white;
+            background: radial-gradient(circle, #007bff, #00c6ff);
+            border-radius: 10px;
+            padding: 10px 20px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nav-pills .nav-link:hover {
+            background: linear-gradient(to right, #0056b3, #0084d6);
+            color: #fff;
+        }
+
+        .nav-pills .nav-link.active {
+            background: linear-gradient(to right, #004085, #0056b3);
+            color: #fff;
+        }
+
+        .nav-item {
+            margin-right: 10px;
+        }
+
+        .nav-pills .nav-link {
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-pills .nav-link:active {
+            transform: scale(0.95);
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <section id="s01" class="py-1 w-100" style="background-color:#b42a64;position: sticky;top: 0;z-index: 10;">
+        <div class="container">
+            <div class="text-end">
+                <a href="#">
+                    <i class="fa-brands fa-square-facebook text-primary"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-square-x-twitter text-black"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-instagram text-danger"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-line text-success"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="s02" class="pt-3 w-100" style="background-color: #faf9f9;position: sticky;top:32px;z-index: 10;">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg" style="background-color: #faf9f9;">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="20241226-ex1.html">
+                        <img src="images/company_logo.jpg" alt="" style="width: 120px;height: 50px;">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto nav-links" style="white-space: nowrap;">
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=歐洲" data-region="歐洲">歐洲</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=大陸" data-region="大陸">大陸</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=紐澳" data-region="紐澳">紐澳</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=美加" data-region="美加">美加</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=中東" data-region="中東">中東</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=日本" data-region="日本">日本</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=韓國" data-region="韓國">韓國</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=東南亞" data-region="東南亞">東南亞</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=遊輪" data-region="遊輪">豪華遊輪</a>
+                            </li>
+                        </ul>
+                        <div class="dropdown mt-1 me-2">
+                            <button class="btn btn-outline-danger dropdown-toggle d-none fs-5 fw-900" type="button"
+                                id="s02_manager_panel_btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                管理者功能
+                            </button>
+                            <ul class="dropdown-menu dropdown-content" aria-labelledby="s02_manager_panel_btn">
+                                <li><a class="dropdown-item" href="20241226-ex1-member_control_panel_v1.html"
+                                        >會員管理</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-orders_control_panel_v1.html"
+                                        >訂單管理</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-process_control_panel_v1.html?region=歐洲"
+                                        >行程管理</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-report_control_panel_v1.html"
+                                        >營業報表</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-member_edit_panel_v1.html#account"
+                                        >帳號管理</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-member_edit_panel_v1.html#order_query"
+                                        >訂單查詢</a></li>
+                                <li><a class="dropdown-item" href="https://rate.bot.com.tw/xrt?Lang=zh-tw&redirect=true"
+                                        target="_blank">匯率查詢</a></li>
+                                <li><a class="dropdown-item" href="https://www.trivago.com.tw/" target="_blank">旅館查詢</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dropdown mt-1 me-2">
+                            <button class="btn btn-outline-danger dropdown-toggle d-none fs-5 fw-900" type="button"
+                                id="s02_member_panel_btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                會員功能
+                            </button>
+                            <ul class="dropdown-menu dropdown-content" aria-labelledby="s02_member_panel_btn">
+                                <li><a class="dropdown-item" href="20241226-ex1-member_edit_panel_v1.html#account"
+                                        >帳號管理</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-member_edit_panel_v1.html#order_query"
+                                        >訂單查詢</a></li>
+                                <li><a class="dropdown-item" href="https://rate.bot.com.tw/xrt?Lang=zh-tw&redirect=true"
+                                        target="_blank">匯率查詢</a></li>
+                                <li><a class="dropdown-item" href="https://www.trivago.com.tw/" target="_blank">旅館查詢</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="h4 text-success fw-900 me-3 d-none" id="s02_username_showtext"
+                            style="white-space: nowrap;">歡迎會員:<span class="h3 text-warning" id="s02_username_text"
+                                style="white-space: nowrap;"></span></span>
+                    </div>
+                    <div>
+                        <button class="btn btn-danger d-none" data-bs-toggle="logoutmodal" data-bs-target="#logoutModal"
+                            style="white-space: nowrap;" id="s02_logout_btn">登出</button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+    <section id="s03" style="background-color: rgba(9, 103, 197, 0.7);">
+        <div class="container mt-3">
+            <div class="row">
+                <ul class="nav nav-pills my-3 justify-content-center" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="btn btn-lg nav-link active" id="pills-total-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-total" type="button" role="tab" aria-controls="pills-total"
+                            aria-selected="true">營業總表</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-sells-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-sells" type="button" role="tab" aria-controls="pills-sells"
+                            aria-selected="false">銷售相關</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-process-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-process" type="button" role="tab" aria-controls="pills-process"
+                            aria-selected="false">行程相關</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-member-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-member" type="button" role="tab" aria-controls="pills-member"
+                            aria-selected="false">會員相關</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-total" role="tabpanel"
+                        aria-labelledby="pills-total-tab">
+                        <div class="row">
+                            <div class="col-md-6 col-lg-4">
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-12 mb-3">
+                                        <div class="card h-100"
+                                            style="background: radial-gradient(circle, rgba(28, 67, 246, 0.5), rgba(63, 62, 62, 0.3));">
+                                            <div class="card-body d-flex align-items-center text-white">
+                                                <i class="fa-solid fa-sack-dollar fa-4x d-none d-md-block"></i>
+                                                <div class="text-center w-100">
+                                                    <div class="h3">今日營業額</div>
+                                                    <div class="h4" id="count_today_orders_spent">200</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-12 mb-3">
+                                        <div class="card h-100"
+                                            style="background: radial-gradient(circle, rgba(28, 67, 246, 0.5), rgba(63, 62, 62, 0.3));">
+                                            <div class="card-body d-flex align-items-center text-white">
+                                                <i class="fa-solid fa-money-bill-trend-up fa-5x d-none d-md-flex"></i>
+                                                <div class="text-center w-100">
+                                                    <div class="h3">年度營業額</div>
+                                                    <div class="h4" id="count_orders_spent">200</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-12 mb-3">
+                                        <div class="card h-100"
+                                            style="background: radial-gradient(circle, rgba(28, 67, 246, 0.5), rgba(63, 62, 62, 0.3));">
+                                            <div class="card-body d-flex align-items-center text-white">
+                                                <i class="fa-solid fa-person fa-5x d-none d-md-block"></i>
+                                                <div class="text-center w-100">
+                                                    <div class="h3">會員人數</div>
+                                                    <div class="h4" id="count_member">200</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-12 mb-3">
+                                        <div class="card h-100"
+                                            style="background: radial-gradient(circle, rgba(28, 67, 246, 0.5), rgba(63, 62, 62, 0.3));">
+                                            <div class="card-body d-flex align-items-center text-white">
+                                                <i class="fa-solid fa-copy fa-5x d-none d-md-flex"></i>
+                                                <div class="text-center w-100">
+                                                    <div class="h3">訂單數量</div>
+                                                    <div class="h4" id="count_orders">200</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 col-lg-12 mb-3">
+                                        <div class="card h-100"
+                                            style="background: radial-gradient(circle, rgba(28, 67, 246, 0.5), rgba(63, 62, 62, 0.3));">
+                                            <div class="card-body d-flex align-items-center text-white">
+                                                <i class="fa-solid fa-gift fa-5x d-none d-md-block"></i>
+                                                <div class="text-center w-100">
+                                                    <div class="h3">行程數量</div>
+                                                    <div class="h4" id="count_process">200</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 mb-3">
+                                        <div class="card w-100 h-100"
+                                            style="background: radial-gradient(circle, rgba(28, 67, 246, 0.5), rgba(63, 62, 62, 0.3));">
+                                            <div class="card-body text-white">
+                                                會員等級統計
+                                                <canvas id="myChart02"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="row">
+                                    <div class="col-lg-12 mb-2">
+                                        <div class="card w-100 h-100"
+                                            style="background: radial-gradient(circle, rgba(28, 67, 246, 0.5), rgba(63, 62, 62, 0.3));">
+                                            <div class="card-body text-white">
+                                                每月銷售額統計
+                                                <canvas id="myChart06"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 mb-2">
+                                        <div class="card w-100 h-100"
+                                            style="background: radial-gradient(circle, rgba(28, 67, 246, 0.5), rgba(63, 62, 62, 0.3));">
+                                            <div class="card-body text-white">
+                                                每月訂單數量統計
+                                                <canvas id="myChart09"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 mb-2">
+                                        <div class="card w-100 h-100"
+                                            style="background: radial-gradient(circle, rgba(28, 67, 246, 0.5), rgba(63, 62, 62, 0.3));">
+                                            <div class="card-body text-white">
+                                                每月會員人數統計
+                                                <canvas id="myChart01"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 mb-2">
+                                        <div class="card w-100 h-100"
+                                            style="background: radial-gradient(circle, rgba(28, 67, 246, 0.5), rgba(63, 62, 62, 0.3));">
+                                            <div class="card-body text-white">
+                                                會員居住地統計
+                                                <canvas id="myChart03"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 mb-2">
+                                        <div class="card w-100 h-100"
+                                            style="background: radial-gradient(circle, rgba(28, 67, 246, 0.5), rgba(63, 62, 62, 0.3));">
+                                            <div class="card-body text-white">
+                                                行程報名人數分析
+                                                <canvas id="myChart07"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="row">
+                                    <div class="col-lg-12 mb-1">
+                                        <div class="card w-100 h-100"
+                                            style="background: radial-gradient(circle, rgba(28, 67, 246, 0.5), rgba(63, 62, 62, 0.3));">
+                                            <div class="card-body text-white">
+                                                行程狀態統計
+                                                <canvas id="myChart05"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 mb-1">
+                                        <div class="card w-100 h-100"
+                                            style="background: radial-gradient(circle, rgba(28, 67, 246, 0.5), rgba(63, 62, 62, 0.3));">
+                                            <div class="card-body text-white">
+                                                行程評價分析
+                                                <canvas id="myChart08"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12 mb-1">
+                                        <div class="card w-100 h-100"
+                                            style="background: radial-gradient(circle, rgba(28, 67, 246, 0.5), rgba(63, 62, 62, 0.3));">
+                                            <div class="card-body text-white">
+                                                各地區報名人數統計
+                                                <canvas id="myChart04"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-sells" role="tabpanel" aria-labelledby="pills-sells-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="col-md-6 col-lg-12 mb-3">
+                                    <div class="card h-100"
+                                        style="background: radial-gradient(circle, rgba(28, 67, 246, 0.5), rgba(63, 62, 62, 0.3));">
+                                        <div class="card-body d-flex align-items-center text-white">
+                                            <i class="fa-solid fa-sack-dollar fa-4x d-none d-md-block"></i>
+                                            <div class="text-center w-100">
+                                                <div class="h3">今日營業額</div>
+                                                <div id="sells_count_today_orders_spent"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-12 mb-3">
+                                    <div class="card h-100"
+                                        style="background: radial-gradient(circle, rgba(28, 67, 246, 0.5), rgba(63, 62, 62, 0.3));">
+                                        <div class="card-body d-flex align-items-center text-white">
+                                            <i class="fa-solid fa-money-bill-trend-up fa-5x d-none d-md-flex"></i>
+                                            <div class="text-center w-100">
+                                                <div class="h3">年度營業額</div>
+                                                <div id="sells_count_orders_spent"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-12 mb-3">
+                                    <div class="card h-100"
+                                        style="background: radial-gradient(circle, rgba(28, 67, 246, 0.5), rgba(63, 62, 62, 0.3));">
+                                        <div class="card-body d-flex align-items-center text-white">
+                                            <i class="fa-solid fa-copy fa-5x d-none d-md-flex"></i>
+                                            <div class="text-center w-100">
+                                                <div class="h3">訂單數量</div>
+                                                <div id="sells_count_orders"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="col-lg-12 mb-2">
+                                    <div class="card w-100 h-100"
+                                        style="background: radial-gradient(circle, rgba(28, 67, 246, 0.5), rgba(63, 62, 62, 0.3));">
+                                        <div class="card-body text-white">
+                                            每月銷售額統計
+                                            <div id="sells_chart06"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 mb-2">
+                                    <div class="card w-100 h-100"
+                                        style="background: radial-gradient(circle, rgba(28, 67, 246, 0.5), rgba(63, 62, 62, 0.3));">
+                                        <div class="card-body text-white">
+                                            每月訂單數量統計
+                                            <div id="sells_chart09"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-process" role="tabpanel" aria-labelledby="pills-process-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="col-md-6 col-lg-12 mb-3">
+                                    <div class="card h-100"
+                                        style="background: radial-gradient(circle, rgba(28, 67, 246, 0.5), rgba(63, 62, 62, 0.3));">
+                                        <div class="card-body d-flex align-items-center text-white">
+                                            <i class="fa-solid fa-gift fa-5x d-none d-md-block"></i>
+                                            <div class="text-center w-100">
+                                                <div class="h3">行程數量</div>
+                                                <div id="process_count_process"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 mb-3">
+                                    <div class="card w-100 h-100"
+                                        style="background: radial-gradient(circle, rgba(28, 67, 246, 0.5), rgba(63, 62, 62, 0.3));">
+                                        <div class="card-body text-white">
+                                            行程報名人數分析
+                                            <div id="process_chart07"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 mb-1">
+                                    <div class="card w-100 h-100"
+                                        style="background: radial-gradient(circle, rgba(28, 67, 246, 0.5), rgba(63, 62, 62, 0.3));">
+                                        <div class="card-body text-white">
+                                            行程狀態統計
+                                            <div id="process_chart05"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="col-lg-12">
+                                    <div class="card w-100 h-100"
+                                        style="background: radial-gradient(circle, rgba(28, 67, 246, 0.5), rgba(63, 62, 62, 0.3));">
+                                        <div class="card-body text-white">
+                                            行程評價分析
+                                            <div id="process_chart08"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 mb-1">
+                                    <div class="card w-100 h-100"
+                                        style="background: radial-gradient(circle, rgba(28, 67, 246, 0.5), rgba(63, 62, 62, 0.3));">
+                                        <div class="card-body text-white">
+                                            各地區報名人數統計
+                                            <div id="process_chart04"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-member" role="tabpanel" aria-labelledby="pills-member-tab">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="col-md-6 col-lg-12 mb-1">
+                                    <div class="card h-100"
+                                        style="background: radial-gradient(circle, rgba(28, 67, 246, 0.5), rgba(63, 62, 62, 0.3));">
+                                        <div class="card-body d-flex align-items-center text-white">
+                                            <i class="fa-solid fa-person fa-5x d-none d-md-block"></i>
+                                            <div class="text-center w-100">
+                                                <div class="h3">會員人數</div>
+                                                <div id="member_count_member"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 mb-1">
+                                    <div class="card w-100 h-100"
+                                        style="background: radial-gradient(circle, rgba(28, 67, 246, 0.5), rgba(63, 62, 62, 0.3));">
+                                        <div class="card-body text-white">
+                                            會員等級統計
+                                            <div id="member_chart02"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="col-lg-12 mb-3">
+                                    <div class="card w-100 h-100"
+                                        style="background: radial-gradient(circle, rgba(28, 67, 246, 0.5), rgba(63, 62, 62, 0.3));">
+                                        <div class="card-body text-white">
+                                            每月會員人數統計
+                                            <div id="member_chart01"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 mb-1">
+                                    <div class="card w-100 h-100"
+                                        style="background: radial-gradient(circle, rgba(28, 67, 246, 0.5), rgba(63, 62, 62, 0.3));">
+                                        <div class="card-body text-white">
+                                            會員居住地統計
+                                            <div id="member_chart03"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section id="s11">
+        <div class="footer_content" style="background-color: #530c6e;color: #e6d4f3;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 col-12 left-area">
+                        <div class="mb-sm-5 mb-4 wow animate__animated animate__fadeInUp fadeInUp animate__slow"
+                            data-wow-delay="0s" style="visibility: visible; animation-name: fadeInUp;">
+                            <h1 class="fw-900 mt-5"> <a href="#"
+                                    style="text-decoration: none;color:#e6d4f3">綜彩旅行社有限公司</a></h1>
+                        </div>
+                        <div class="footer-info wow animate__animated animate__fadeInDown animate__slow"
+                            data-wow-delay="0s" style="visibility: visible; animation-name: fadeInDown;">
+                            <ul class="list-unstyled">
+                                <li>統一編號：27560645</li>
+                                <li>交觀甲 第6783號 / 品保 北1513</li>
+                                <li>負責人：吳佳筠 / 聯絡人：徐信杰</li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li>電話：<a href="tel:0225715838" class="d-inline-block">02-2571-5838</a>、<a
+                                        href="tel:0225634633" class="d-inline-block">02-2563-4633</a></li>
+                                <li>傳真：02-2562-2269</li>
+                                <li>地址：104台北市中山區松江路152號６樓603室</li>
+                                <li>信箱：<a href="mailto:colorfultravel@yahoo.com.tw">colorfultravel@yahoo.com.tw</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 wow animate__animated animate__slideInUp animate__slow" data-wow-delay="0s"
+                        style="visibility: visible; animation-name: slideInUp;">
+                        <div class="copyrights-info clearfix mt-4">
+                            <div class="copyrights d-inline-block mr-3 mb-2">Copyright © 綜彩旅行社有限公司 All Rights Reserved
+                            </div>
+                            <div class="copyrights d-inline-block">本網站內容享有著作權，禁止侵害，違者必究。</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="https://kit.fontawesome.com/176a59b465.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(function () {
+
+            // 確認uid是否合法
+            if (getCookie("Uid01")) {
+
+                var JSONdata = {};
+                JSONdata["uid01"] = getCookie("Uid01");
+
+                $.ajax({
+                    type: "POST",
+                    url: "20241226-ex1-member_control_api_v1.php?action=checkuid",
+                    data: JSON.stringify(JSONdata),
+                    dataType: "json",
+                    success: showdata_checkuid,
+                    error: function () {
+                        Swal.fire({
+                            title: "API介接錯誤?",
+                            text: "20241226-ex1-member_control_api_v1.php",
+                            icon: "error"
+                        });
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: "請先登入會員",
+                    icon: "info",
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: "確認",
+                    denyButtonText: `Don't save`,
+                    allowOutsideClick: false
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        location.href = "20241226-ex1.html"
+                    }
+                });
+            }
+
+            //s02 logout按紐監聽
+            $("#s02_logout_btn").click(function () {
+                setCookie("Uid01", "", 7);
+                location.href = "20241226-ex1.html";
+            });
+
+
+
+            var mychart01, mychart02, mychart03, mychart04, mychart05, mychart06, mychart07, mychart08, mychart09;
+            Chart.defaults.color = 'lightblue';
+            $(function () {
+
+
+                //每月會員人數統計圖
+                const ctx01 = document.getElementById('myChart01');
+                mychart01 = new Chart(ctx01, {
+                    type: 'line',
+                    data: {
+                        labels: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+                        datasets: [{
+                            label: '人數',
+                            data: [12, 19, 3, 5, 2, 3],
+                            borderWidth: 2,
+                            backgroundColor: 'rgb(54, 162, 235)',
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+
+                // 會員等級統計圖
+                const ctx02 = document.getElementById('myChart02');
+                mychart02 = new Chart(ctx02, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['台中市', '台北市', '台南市', '高雄市', '新北市', '桃園市'],
+                        datasets: [{
+                            label: '人數',
+                            data: [12, 19, 3, 5, 2, 3],
+                            borderWidth: 2,
+                            backgroundColor: [
+                                'rgba(255, 99, 133, 0.7)',
+                                'rgba(54, 162, 235, 0.7)',
+                                'rgba(255, 205, 86, 0.7)',
+                                'rgba(54, 45, 235, 0.7)',
+                                'rgba(200, 88, 200, 0.7)',
+                                'rgba(113, 162, 235, 0.7)'
+                            ],
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'top'
+                            }
+                        }
+                    }
+                });
+
+                // 會員居住地統計圖
+                const ctx03 = document.getElementById('myChart03');
+                mychart03 = new Chart(ctx03, {
+                    type: 'bar',
+                    data: {
+                        labels: ['台中市', '台北市', '台南市', '高雄市', '新北市', '桃園市'],
+                        datasets: [{
+                            label: '人數',
+                            data: [12, 19, 3, 5, 2, 3],
+                            borderWidth: 2,
+                            backgroundColor: 'rgb(54, 162, 235)',
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            },
+                            x: {
+                                ticks: {
+                                    autoSkip: false,
+                                    maxRotation: 45,
+                                    minRotation: 45,
+                                }
+                            }
+                        }
+                    }
+                });
+
+                // 行程地區統計圖
+                const ctx04 = document.getElementById('myChart04');
+                mychart04 = new Chart(ctx04, {
+                    type: 'polarArea',
+                    data: {
+                        labels: ['台中市', '台北市', '台南市', '高雄市', '新北市', '桃園市'],
+                        datasets: [{
+                            label: '縣市人口比例',
+                            data: [12, 19, 3, 5, 2, 3],
+                            borderWidth: 2,
+                            backgroundColor: [
+                                'rgba(255, 99, 133, 0.7)',
+                                'rgba(54, 162, 235, 0.7)',
+                                'rgba(255, 205, 86, 0.7)',
+                                'rgba(54, 45, 235, 0.7)',
+                                'rgba(200, 88, 200, 0.7)',
+                                'rgba(113, 162, 235, 0.7)'
+                            ],
+                            borderColor: [
+                                'rgb(255, 99, 133)',
+                                'rgb(54, 162, 235)',
+                                'rgb(255, 205, 86)',
+                                'rgb(54, 45, 235)',
+                                'rgb(200, 88, 200)',
+                                'rgb(113, 162, 235)'
+                            ]
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'top'
+                            }
+                        }
+                    }
+                });
+
+
+                // 行程地區統計圖
+                const ctx05 = document.getElementById('myChart05');
+                mychart05 = new Chart(ctx05, {
+                    type: 'pie',
+                    data: {
+                        labels: ['台中市', '台北市', '台南市', '高雄市', '新北市', '桃園市'],
+                        datasets: [{
+                            label: '行程狀態數量',
+                            data: [12, 19, 3, 5, 2, 3],
+                            borderWidth: 2,
+                            backgroundColor: [
+                                'rgba(255, 99, 133, 0.7)',
+                                'rgba(54, 162, 235, 0.7)',
+                                'rgba(255, 205, 86, 0.7)',
+                                'rgba(54, 45, 235, 0.7)',
+                                'rgba(200, 88, 200, 0.7)',
+                                'rgba(113, 162, 235, 0.7)'
+                            ],
+                            borderColor: [
+                                'rgb(255, 99, 133)',
+                                'rgb(54, 162, 235)',
+                                'rgb(255, 205, 86)',
+                                'rgb(54, 45, 235)',
+                                'rgb(200, 88, 200)',
+                                'rgb(113, 162, 235)'
+                            ]
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'top'
+                            }
+                        }
+                    }
+
+                });
+
+                //每月銷售額統計圖
+                const ctx06 = document.getElementById('myChart06');
+                mychart06 = new Chart(ctx06, {
+                    type: 'line',
+                    data: {
+                        labels: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+                        datasets: [{
+                            label: '金額(元)',
+                            data: [12, 19, 3, 5, 2, 3],
+                            borderWidth: 2,
+                            backgroundColor: 'rgb(54, 162, 235)',
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+
+                //行程報名人數分析圖
+                const ctx07 = document.getElementById('myChart07');
+                mychart07 = new Chart(ctx07, {
+                    type: 'bubble',
+                    data: {
+                        labels: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+                        datasets: [{
+                            label: '',
+                            data: [12, 19, 3, 5, 2, 3],
+                            borderWidth: 2,
+                            backgroundColor: 'rgb(54, 162, 235)',
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            x: { title: { display: true, text: '報名人數' } },
+                            y: { title: { display: true, text: '評價 (最高 5 分)' } }
+                        },
+                        plugins: {
+                            legend: { display: true }
+                        }
+                    }
+                });
+
+                //行程評價分析圖
+                const ctx08 = document.getElementById('myChart08');
+                mychart08 = new Chart(ctx08, {
+                    type: 'radar',
+                    data: {
+                        labels: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+                        datasets: [{
+                            label: '',
+                            data: [12, 19, 3, 5, 2, 3],
+                            borderWidth: 2,
+                            backgroundColor: 'rgb(54, 162, 235)',
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            r: {
+                                beginAtZero: true,
+                                angleLines: { display: true },
+                                suggestedMin: 0,
+                                suggestedMax: 10
+                            }
+                        },
+                        plugins: {
+                            legend: { position: 'top' }
+                        }
+                    }
+                });
+
+                //每月訂單統計圖
+                const ctx09 = document.getElementById('myChart09');
+                mychart09 = new Chart(ctx09, {
+                    type: 'bar',
+                    data: {
+                        labels: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+                        datasets: [{
+                            label: '訂單筆數',
+                            data: [12, 19, 3, 5, 2, 3],
+                            borderWidth: 2,
+                            backgroundColor: 'rgb(54, 162, 235)',
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+
+                // 取得會員統計資料
+                $.ajax({
+                    type: "GET",
+                    url: "20241226-ex1-report_control_api_v1.php?action=countmember",
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data)
+                        if (data.state) {
+                            $("#count_member").text(data.data.count_member);
+                        } else {
+                            Swal.fire({
+                                title: data.message,
+                                icon: "error"
+                            });
+                        }
+                    },
+                    error: function () {
+                        Swal.fire({
+                            title: "API介接錯誤!",
+                            text: "20241226-ex1-report_control_api_v1.php",
+                            icon: "error"
+                        });
+                    }
+                });
+
+                // 取得行程統計資料
+                $.ajax({
+                    type: "GET",
+                    url: "20241226-ex1-report_control_api_v1.php?action=countprocess",
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data)
+                        if (data.state) {
+                            $("#count_process").text(data.data.count_process);
+                        } else {
+                            Swal.fire({
+                                title: data.message,
+                                icon: "error"
+                            });
+                        }
+                    },
+                    error: function () {
+                        Swal.fire({
+                            title: "API介接錯誤!",
+                            text: "20241226-ex1-report_control_api_v1.php",
+                            icon: "error"
+                        });
+                    }
+                });
+
+                // 取得訂單統計資料
+                $.ajax({
+                    type: "GET",
+                    url: "20241226-ex1-report_control_api_v1.php?action=countorders",
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data)
+                        if (data.state) {
+                            $("#count_orders").text(data.data.count_orders);
+                        } else {
+                            Swal.fire({
+                                title: data.message,
+                                icon: "error"
+                            });
+                        }
+                    },
+                    error: function () {
+                        Swal.fire({
+                            title: "API介接錯誤!",
+                            text: "20241226-ex1-report_control_api_v1.php",
+                            icon: "error"
+                        });
+                    }
+                });
+
+                // 取得今日銷售額統計資料
+                $.ajax({
+                    type: "GET",
+                    url: "20241226-ex1-report_control_api_v1.php?action=counttodayordersspent",
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data)
+                        if (data.state) {
+                            $("#count_today_orders_spent").text(data.data.count_today_orders_spent);
+                        } else {
+                            Swal.fire({
+                                title: data.message,
+                                icon: "error"
+                            });
+                        }
+                    },
+                    error: function () {
+                        Swal.fire({
+                            title: "API介接錯誤!",
+                            text: "20241226-ex1-report_control_api_v1.php",
+                            icon: "error"
+                        });
+                    }
+                });
+
+
+                // 取得年度銷售額統計資料
+                $.ajax({
+                    type: "GET",
+                    url: "20241226-ex1-report_control_api_v1.php?action=countordersspent",
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data)
+                        if (data.state) {
+                            $("#count_orders_spent").text(data.data.count_orders_spent);
+                        } else {
+                            Swal.fire({
+                                title: data.message,
+                                icon: "error"
+                            });
+                        }
+                    },
+                    error: function () {
+                        Swal.fire({
+                            title: "API介接錯誤!",
+                            text: "20241226-ex1-report_control_api_v1.php",
+                            icon: "error"
+                        });
+                    }
+                });
+
+                //取得每月會員人數
+                $.ajax({
+                    type: "GET",
+                    url: "20241226-ex1-report_control_api_v1.php?action=countmonthmember",
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data);
+                        if (data.state) {
+                            mychart01.data.labels = [];
+                            mychart01.data.datasets[0].data = [];
+                            data.data.forEach(function (item) {
+                                console.log(item);
+                                mychart01.data.labels.push(item.month);
+                                mychart01.data.datasets[0].data.push(item.member_count);
+                            });
+                            mychart01.update();
+                        } else {
+                            Swal.fire({
+                                title: data.message,
+                                icon: "error"
+                            });
+                        }
+                    },
+                    error: function () {
+                        Swal.fire({
+                            title: "API介接錯誤!",
+                            text: "20241226-ex1-report_control_api_v1.php",
+                            icon: "error"
+                        });
+                    }
+                });
+
+                //取得會員居住分布資料
+                $.ajax({
+                    type: "GET",
+                    url: "20241226-ex1-report_control_api_v1.php?action=countcitymember",
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data);
+                        if (data.state) {
+                            mychart03.data.labels = [];
+                            mychart03.data.datasets[0].data = [];
+                            data.data.forEach(function (item) {
+                                console.log(item);
+                                mychart03.data.labels.push(item.city);
+                                mychart03.data.datasets[0].data.push(item.count_city_member);
+                            });
+                            mychart03.update();
+                        } else {
+                            Swal.fire({
+                                title: data.message,
+                                icon: "error"
+                            });
+                        }
+                    },
+                    error: function () {
+                        Swal.fire({
+                            title: "API介接錯誤!",
+                            text: "20241226-ex1-report_control_api_v1.php?",
+                            icon: "error"
+                        });
+                    }
+                });
+
+                //取得會員等級分布資料
+                $.ajax({
+                    type: "GET",
+                    url: "20241226-ex1-report_control_api_v1.php?action=countlevelmember",
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data);
+                        if (data.state) {
+                            mychart02.data.labels = [];
+                            mychart02.data.datasets[0].data = [];
+                            data.data.forEach(function (item) {
+                                console.log(item);
+                                mychart02.data.labels.push(item.level);
+                                mychart02.data.datasets[0].data.push(item.level_count);
+
+                            });
+                            mychart02.update();
+                        } else {
+                            Swal.fire({
+                                title: data.message,
+                                icon: "error"
+                            });
+                        }
+                    },
+                    error: function () {
+                        Swal.fire({
+                            title: "API介接錯誤!",
+                            text: "20250211-control-panel-api.php?action=countregionuser",
+                            icon: "error"
+                        });
+                    }
+                });
+
+                //取得各地區報名人數資料
+                $.ajax({
+                    type: "GET",
+                    url: "20241226-ex1-report_control_api_v1.php?action=countregionprocess",
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.state) {
+                            mychart04.data.labels = [];
+                            mychart04.data.datasets[0].data = [];
+                            mychart04.data.datasets[0].backgroundColor = [];
+                            function getRandomColor() {
+                                return `rgba(${Math.floor(Math.random() * 255)}, 
+                              ${Math.floor(Math.random() * 255)}, 
+                              ${Math.floor(Math.random() * 255)}, 0.6)`;
+                            }
+
+                            data.data.forEach(item => {
+                                mychart04.data.labels.push(item.region);
+                                mychart04.data.datasets[0].data.push(item.total_signups);
+                                mychart04.data.datasets[0].backgroundColor.push(getRandomColor());
+                            });
+
+                            mychart04.update();
+                        } else {
+                            Swal.fire({
+                                title: data.message,
+                                icon: "error"
+                            });
+                        }
+                    },
+                    error: function () {
+                        Swal.fire({
+                            title: "API介接錯誤!",
+                            text: "20241226-ex1-report_control_api_v1.php?",
+                            icon: "error"
+                        });
+                    }
+                });
+
+                //取得行程狀態資料
+                $.ajax({
+                    type: "GET",
+                    url: "20241226-ex1-report_control_api_v1.php?action=countstatusprocess",
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.state) {
+                            mychart05.data.labels = [];
+                            mychart05.data.datasets[0].data = [];
+                            data.data.forEach(function (item) {
+                                mychart05.data.labels.push(item.status);
+                                mychart05.data.datasets[0].data.push(item.count_status_process);
+                            });
+                            mychart05.update();
+                        } else {
+                            Swal.fire({
+                                title: data.message,
+                                icon: "error"
+                            });
+                        }
+                    },
+                    error: function () {
+                        Swal.fire({
+                            title: "API介接錯誤!",
+                            text: "20241226-ex1-report_control_api_v1.php?",
+                            icon: "error"
+                        });
+                    }
+                });
+
+                //取得每月銷售額資料
+                $.ajax({
+                    type: "GET",
+                    url: "20241226-ex1-report_control_api_v1.php?action=countmonthordersspent",
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.state) {
+                            mychart06.data.labels = [];
+                            mychart06.data.datasets[0].data = [];
+                            data.data.forEach(function (item) {
+                                console.log(item);
+                                mychart06.data.labels.push(item.month);
+                                mychart06.data.datasets[0].data.push(item.count_month_orders_spent);
+                            });
+                            mychart06.update();
+                        } else {
+                            Swal.fire({
+                                title: data.message,
+                                icon: "error"
+                            });
+                        }
+                    },
+                    error: function () {
+                        Swal.fire({
+                            title: "API介接錯誤!",
+                            text: "20241226-ex1-report_control_api_v1.php?",
+                            icon: "error"
+                        });
+                    }
+                });
+
+                //取得行程評價、報名人數、團費資料
+                $.ajax({
+                    type: "GET",
+                    url: "20241226-ex1-report_control_api_v1.php?action=ratiingprocess",
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.state) {
+                            mychart07.data.labels = [];
+                            mychart07.data.datasets = [];
+                            let newDataset = data.data.map(item => ({
+                                label: item.title,
+                                data: [{
+                                    x: item.signups,        
+                                    y: item.rating,         
+                                    r: item.cost / 10000   
+                                }],
+                                backgroundColor: `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.6)`,
+                                borderColor: "#fff",
+                                borderWidth: 1
+                            }));
+
+                            mychart07.data.datasets = newDataset;
+                            mychart07.update();
+                        } else {
+                            Swal.fire({
+                                title: data.message,
+                                icon: "error"
+                            });
+                        }
+                    },
+                    error: function () {
+                        Swal.fire({
+                            title: "API介接錯誤!",
+                            text: "20241226-ex1-report_control_api_v1.php?",
+                            icon: "error"
+                        });
+                    }
+                });
+
+                //取得行程評分資料
+                $.ajax({
+                    type: "GET",
+                    url: "20241226-ex1-report_control_api_v1.php?action=scoreprocess",
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.state) {
+                            mychart08.data.labels = ["餐飲", "住宿", "景點", "價格", "交通"];
+                            mychart08.data.datasets = [];
+
+                            let newDataset = data.data.map(item => ({
+                                label: item.p_title,
+                                data: [
+                                    item.food,
+                                    item.stay,
+                                    item.view,
+                                    item.price,
+                                    item.traffic
+                                ],
+                                backgroundColor: `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.4)`,
+                                borderColor: `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 1)`,
+                                borderWidth: 2
+                            }));
+
+                            mychart08.data.datasets = newDataset;
+                            mychart08.update();
+                        } else {
+                            Swal.fire({
+                                title: data.message,
+                                icon: "error"
+                            });
+                        }
+                    },
+                    error: function () {
+                        Swal.fire({
+                            title: "API介接錯誤!",
+                            text: "20241226-ex1-report_control_api_v1.php?",
+                            icon: "error"
+                        });
+                    }
+                });
+
+                //取得每月訂單數量
+                $.ajax({
+                    type: "GET",
+                    url: "20241226-ex1-report_control_api_v1.php?action=countmonthorders",
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.state) {
+                            mychart09.data.labels = [];
+                            mychart09.data.datasets[0].data = [];
+                            data.data.forEach(function (item) {
+                                console.log(item);
+                                mychart09.data.labels.push(item.month);
+                                mychart09.data.datasets[0].data.push(item.count_month_orders);
+                            });
+                            mychart09.update();
+                        } else {
+                            Swal.fire({
+                                title: data.message,
+                                icon: "error"
+                            });
+                        }
+                    },
+                    error: function () {
+                        Swal.fire({
+                            title: "API介接錯誤!",
+                            text: "20241226-ex1-report_control_api_v1.php",
+                            icon: "error"
+                        });
+                    }
+                });
+
+
+                // 切換頁籤，搬移chartjs
+                $('button[data-bs-toggle="pill"]').on('shown.bs.tab', function (event) {
+                    let targetTab = $(event.target).attr('data-bs-target'); // 取得當前頁籤
+
+                    if (targetTab === "#pills-total") {
+                        location.reload();
+                    } else if (targetTab === "#pills-sells") {
+                        $("#sells_chart06").append($("#myChart06"));
+                        $("#sells_chart09").append($("#myChart09"));
+                        $("#sells_count_today_orders_spent").append($("#count_today_orders_spent"));
+                        $("#sells_count_orders_spent").append($("#count_orders_spent"));
+                        $("#sells_count_orders").append($("#count_orders"));
+                        myChart06.resize();
+                        myChart09.resize();
+                    } else if (targetTab === "#pills-process") {
+                        $("#process_chart07").append($("#myChart07"));
+                        $("#process_chart05").append($("#myChart05"));
+                        $("#process_chart08").append($("#myChart08"));
+                        $("#process_chart04").append($("#myChart04"));
+                        $("#process_count_process").append($("#count_process"));
+                        myChart07.resize();
+                        myChart05.resize();
+                        myChart08.resize();
+                        myChart04.resize();
+                    } else if (targetTab === "#pills-member") {
+                        $("#member_chart02").append($("#myChart02"));
+                        $("#member_chart01").append($("#myChart01"));
+                        $("#member_chart03").append($("#myChart03"));
+                        $("#member_count_member").append($("#count_member"));
+                        myChart02.resize();
+                        myChart01.resize();
+                        myChart03.resize();
+                    }
+
+                });
+
+            });
+
+        });
+
+
+        function showdata_checkuid(data) {
+            console.log(data);
+            if (data.state) {
+                $("#s02_username_showtext").removeClass("d-none");
+                $("#s02_username_text").text(data.data.userName);
+
+                $("#s02_logout_btn").removeClass("d-none");
+                $("#s12").removeClass("d-none");
+                if (data.data.level != "" && data.data.level === "管理者") {
+
+                    $("#s02_manager_panel_btn").removeClass("d-none");
+                } else if (data.data.level != "") {
+                    $("#s02_member_panel_btn").removeClass("d-none");
+                }
+
+
+            } else {
+                Swal.fire({
+                    title: "請先登入會員!",
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: "確認",
+                    denyButtonText: `Don't save`,
+                    allowOutsideClick: false
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        location.href = "20241226-ex1.html";
+                    }
+                });
+            }
+        }
+
+
+        // from w3s Cookie
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+    </script>
+</body>
+
+</html>

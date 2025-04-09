@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>各國行程列表</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" />
+    <style>
+        body {
+            font-family: "Kiwi Maru", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .dropdown-content {
+            position: fixed;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .nav-links a:hover {
+            background-color: #f10e65;
+            border-radius: 5px;
+        }
+
+        .white-black-btn {
+            background-color: white;
+            color: black;
+            border: 0px solid;
+            padding: 5px 30px;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .white-black-btn:hover {
+            background-color: rgb(80, 3, 80);
+            color: white;
+        }
+
+        .intro:hover {
+            color: rgb(112, 5, 103);
+            border: 2px solid;
+        }
+
+        .yellow-black-btn {
+            background-color: rgb(238, 176, 105);
+            color: black;
+            border: 0px solid;
+            margin: auto;
+            width: 150px;
+            padding: 5px 20px;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .intro:hover .yellow-black-btn {
+            background-color: rgb(80, 3, 80);
+            color: white;
+        }
+
+        .btn-purple {
+            background-color: #240224;
+            color: aliceblue;
+            font-size: 20px;
+        }
+
+        .btn-purple:hover {
+            background-color: #f360f3;
+        }
+
+        .slide-btn:hover {
+            background-color: #e78d06;
+        }
+
+        .carousel-item img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        #srh_process {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: linear-gradient(to bottom, #ffffff, #f1f1f1);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #srh_process thead {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        #srh_process tbody tr:nth-child(odd) {
+            background: linear-gradient(135deg, #d4f1ff, #9ed2f5);
+        }
+
+        #srh_process tbody tr:nth-child(even) {
+            background: linear-gradient(135deg, #9ed2f5, #007bff);
+        }
+
+        #srh_process tbody tr:hover {
+            background: linear-gradient(135deg, #ff7b00, #ff4800);
+            color: white;
+            transition: 0.3s ease-in-out;
+        }
+
+        #srh_process th {
+            text-align: center;
+        }
+
+        #srh_process td {
+            vertical-align: middle;
+        }
+
+        #srh_process button {
+            padding: 5px 10px;
+            border-radius: 20px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, #007bff, #0056b3) !important;
+            color: white;
+            border: none;
+        }
+
+        .btn-secondary {
+            background: linear-gradient(to right, #6c757d, #5a6268) !important;
+            color: white;
+            border: none;
+        }
+
+        .btn-danger {
+            background: linear-gradient(to right, #dc3545, #b02a37) !important;
+            color: white;
+            border: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <section id="s01" class="py-1 w-100" style="background-color:#b42a64;position: sticky;top: 0;z-index: 10;">
+        <div class="container">
+            <div class="text-end">
+                <a href="#">
+                    <i class="fa-brands fa-square-facebook text-primary"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-square-x-twitter text-black"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-instagram text-danger"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-line text-success"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="s02" class="pt-3 w-100" style="background-color: #faf9f9;position: sticky;top:32px;z-index: 10;">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg" style="background-color: #faf9f9;">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="20241226-ex1.html">
+                        <img src="images/company_logo.jpg" alt="" style="width: 120px;height: 50px;">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto nav-links" style="white-space: nowrap;">
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page" href="#" data-region="歐洲">歐洲</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page" href="#" data-region="大陸">大陸</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page" href="#" data-region="紐澳">紐澳</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page" href="#" data-region="美加">美加</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page" href="#" data-region="中東">中東</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page" href="#" data-region="日本">日本</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page" href="#" data-region="韓國">韓國</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page" href="#" data-region="東南亞">東南亞</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page" href="#" data-region="遊輪">豪華遊輪</a>
+                            </li>
+                        </ul>
+                        <div class="dropdown mt-1 me-2">
+                            <button class="btn btn-outline-danger dropdown-toggle d-none fs-5 fw-900" type="button"
+                                id="s02_manager_panel_btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                管理者功能
+                            </button>
+                            <ul class="dropdown-menu dropdown-content" aria-labelledby="s02_manager_panel_btn">
+                                <li><a class="dropdown-item" href="20241226-ex1-member_control_panel_v1.html"
+                                        >會員管理</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-orders_control_panel_v1.html"
+                                        >訂單管理</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-process_control_panel_v1.html?region=歐洲"
+                                        >行程管理</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-report_control_panel_v1.html?"
+                                        >營業報表</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-member_edit_panel_v1.html#account"
+                                        >帳號管理</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-member_edit_panel_v1.html#order_query"
+                                        >訂單查詢</a></li>
+                                <li><a class="dropdown-item" href="https://rate.bot.com.tw/xrt?Lang=zh-tw&redirect=true"
+                                        >匯率查詢</a></li>
+                                <li><a class="dropdown-item" href="https://www.trivago.com.tw/" target="_blank">旅館查詢</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dropdown mt-1 me-2">
+                            <button class="btn btn-outline-danger dropdown-toggle d-none fs-5 fw-900" type="button"
+                                id="s02_member_panel_btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                會員功能
+                            </button>
+                            <ul class="dropdown-menu dropdown-content" aria-labelledby="s02_member_panel_btn">
+                                <li><a class="dropdown-item" href="20241226-ex1-member_edit_panel_v1.html#account"
+                                        >帳號管理</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-member_edit_panel_v1.html#order_query"
+                                        >訂單查詢</a></li>
+                                <li><a class="dropdown-item" href="https://rate.bot.com.tw/xrt?Lang=zh-tw&redirect=true"
+                                        target="_blank">匯率查詢</a></li>
+                                <li><a class="dropdown-item" href="https://www.trivago.com.tw/" target="_blank">旅館查詢</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="h4 text-success fw-900 me-3 d-none" id="s02_username_showtext"
+                            style="white-space: nowrap;">歡迎會員:<span class="h3 text-warning" id="s02_username_text"
+                                style="white-space: nowrap;"></span></span>
+                    </div>
+                    <div>
+                        <button class="btn btn-danger d-none" data-bs-toggle="logoutmodal" data-bs-target="#logoutModal"
+                            style="white-space: nowrap;" id="s02_logout_btn">登出</button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+    <section id="s03">
+        <div class="container mt-4">
+            <div class="row" id="result-container">
+                <!-- 插入卡片 -->
+            </div>
+            <nav class="mt-4">
+                <ul class="pagination justify-content-center" id="pagination">
+                    <!-- 插入分頁按紐 -->
+                </ul>
+            </nav>
+        </div>
+    </section>
+    <section id="s11">
+        <div class="footer_content" style="background-color: #530c6e;color: #e6d4f3;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 col-12 left-area">
+                        <div class="mb-sm-5 mb-4 wow animate__animated animate__fadeInUp fadeInUp animate__slow"
+                            data-wow-delay="0s" style="visibility: visible; animation-name: fadeInUp;">
+                            <h1 class="fw-900 mt-5"> <a href="#"
+                                    style="text-decoration: none;color:#e6d4f3">綜彩旅行社有限公司</a></h1>
+                        </div>
+                        <div class="footer-info wow animate__animated animate__fadeInDown animate__slow"
+                            data-wow-delay="0s" style="visibility: visible; animation-name: fadeInDown;">
+                            <ul class="list-unstyled">
+                                <li>統一編號：27560645</li>
+                                <li>交觀甲 第6783號 / 品保 北1513</li>
+                                <li>負責人：吳佳筠 / 聯絡人：徐信杰</li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li>電話：<a href="tel:0225715838" class="d-inline-block">02-2571-5838</a>、<a
+                                        href="tel:0225634633" class="d-inline-block">02-2563-4633</a></li>
+                                <li>傳真：02-2562-2269</li>
+                                <li>地址：104台北市中山區松江路152號６樓603室</li>
+                                <li>信箱：<a href="mailto:colorfultravel@yahoo.com.tw">colorfultravel@yahoo.com.tw</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 wow animate__animated animate__slideInUp animate__slow" data-wow-delay="0s"
+                        style="visibility: visible; animation-name: slideInUp;">
+                        <div class="copyrights-info clearfix mt-4">
+                            <div class="copyrights d-inline-block mr-3 mb-2">Copyright © 綜彩旅行社有限公司 All Rights Reserved
+                            </div>
+                            <div class="copyrights d-inline-block">本網站內容享有著作權，禁止侵害，違者必究。</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="https://kit.fontawesome.com/176a59b465.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script>
+
+        $(function () {
+
+
+            // 確認uid是否合法
+            if (getCookie("Uid01")) {
+
+                var JSONdata = {};
+                JSONdata["uid01"] = getCookie("Uid01");
+
+                $.ajax({
+                    type: "POST",
+                    url: "20241226-ex1-member_control_api_v1.php?action=checkuid",
+                    data: JSON.stringify(JSONdata),
+                    dataType: "json",
+                    success: showdata_checkuid,
+                    error: function () {
+                        Swal.fire({
+                            title: "API介接錯誤?",
+                            text: "20241226-ex1-member_control_api_v1.php",
+                            icon: "error"
+                        });
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: "請先登入會員",
+                    icon: "info",
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: "確認",
+                    denyButtonText: `Don't save`,
+                    allowOutsideClick: false
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        location.href = "20241226-ex1.html"
+                    }
+                });
+            }
+
+            //s02 logout按紐監聽
+            $("#s02_logout_btn").click(function () {
+                setCookie("Uid01", "", 7);
+                location.href = "20241226-ex1.html";
+            });
+
+        });
+
+        let allData = [];
+        const pageSize = 3;
+
+        $(document).ready(function () {
+            const params = new URLSearchParams(window.location.search);
+            const regionParam = params.get("region");
+
+            // 點擊 nav-link
+            $(".navbar-nav .nav-link").on("click", function (e) {
+                e.preventDefault();
+                const region = $(this).data("region");
+                fetchData(region);
+                history.pushState(null, "", `?region=${region}`);
+            });
+
+            // 網址傳送 region 參數
+            if (regionParam) {
+                fetchData(regionParam);
+            }
+
+            function fetchData(region) {
+                $.ajax({
+                    url: "20241226-ex1-process_control_api_v1.php?action=getcardprocess",
+                    type: "POST",
+                    data: { region: region },
+                    dataType: "json",
+                    success: function (res) {
+                        console.log(res);
+                        if (res.state) {
+                            allData = res.data;
+                            renderPagination(1);
+                            scrollToTop();
+
+                        } else {
+                            $("#result-container").html(`
+                            <div class="d-flex justify-content-center align-items-center" style="min-height: 300px;">
+                                <div class="text-center w-100 animate__animated animate__fadeIn">
+                                    <p class="text-danger fs-3 fw-bold">${res.message}</p>
+                                </div>
+                            </div>
+                            `);
+                            $("#pagination").html("");
+                        }
+                    },
+                    error: function () {
+                        Swal.fire({
+                            title: "API介接錯誤!",
+                            text: "20241226-ex1-process_control_api_v1.php",
+                            icon: "error"
+                        });
+                    }
+                });
+            }
+
+            // 渲染單頁資料
+            function renderCards(data) {
+                let html = "";
+                data.forEach(item => {
+                    html += `
+                    <div class="col-md-4 my-3">
+                        <div class="card h-100 intro  myroller-l shadow-sm align-items-center">
+                            <img src="${item.photo || 'https://via.placeholder.com/300x180'}" class="card-img-top" alt="...">
+                            <a href="20241226-ex1-process_detail_signup_panel_v1.html?id=${item.id}" class="roller"></a>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title text-danger">${item.title}</h5>
+                                <p class="card-text">${item.content || '這是一段預設說明。'}</p>
+                                <a href="20241226-ex1-process_detail_signup_panel_v1.html?id=${item.id}" target="_blank" 
+                                class="btn border fw-1000 yellow-black-btn mt-auto">我要報名</a>
+                            </div>
+                        </div>
+                    </div>`;
+                });
+                $("#result-container").html(html);
+            }
+
+            // 渲染分頁 + 分頁點擊事件
+            function renderPagination(currentPage) {
+                const totalPages = Math.ceil(allData.length / pageSize);
+                const start = (currentPage - 1) * pageSize;
+                const pageData = allData.slice(start, start + pageSize);
+                renderCards(pageData);
+
+                let pagHTML = '';
+                for (let i = 1; i <= totalPages; i++) {
+                    pagHTML += `<li class="page-item ${i === currentPage ? 'active' : ''}">
+                <a class="page-link" href="#">${i}</a></li>`;
+                }
+                $("#pagination").html(pagHTML);
+
+                $("#pagination .page-link").off("click").on("click", function (e) {
+                    e.preventDefault();
+                    const page = parseInt($(this).text());
+                    renderPagination(page);
+                });
+            }
+        });
+
+        function showdata_checkuid(data) {
+            if (data.state) {
+                $("#s02_username_showtext").removeClass("d-none");
+                $("#s02_username_text").text(data.data.userName);
+                $("#s02_logout_btn").removeClass("d-none");
+                $("#s12").removeClass("d-none");
+                if (data.data.level != "" && data.data.level === "管理者") {
+
+                    $("#s02_manager_panel_btn").removeClass("d-none");
+                } else if (data.data.level != "") {
+                    $("#s02_member_panel_btn").removeClass("d-none");
+                }
+
+            } else {
+                Swal.fire({
+                    title: "請先登入會員!",
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: "確認",
+                    denyButtonText: `Don't save`,
+                    allowOutsideClick: false
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        location.href = "20241226-ex1.html";
+                    }
+                });
+            }
+        }
+
+        // from w3s Cookie
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+    </script>
+</body>
+
+</html>

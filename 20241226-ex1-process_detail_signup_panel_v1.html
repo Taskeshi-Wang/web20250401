@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>報名行程</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" />
+    <style>
+        body {
+            font-family: "Kiwi Maru", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .dropdown-content {
+            position: fixed;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .nav-links a:hover {
+            background-color: #f10e65;
+            border-radius: 5px;
+        }
+
+        .white-black-btn {
+            background-color: white;
+            color: black;
+            border: 0px solid;
+            padding: 5px 30px;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .white-black-btn:hover {
+            background-color: rgb(80, 3, 80);
+            color: white;
+        }
+
+        .intro:hover {
+            color: rgb(112, 5, 103);
+            border: 2px solid;
+        }
+
+        .yellow-black-btn {
+            background-color: rgb(238, 176, 105);
+            color: black;
+            border: 0px solid;
+            margin: auto;
+            width: 150px;
+            padding: 5px 20px;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .intro:hover .yellow-black-btn {
+            background-color: rgb(80, 3, 80);
+            color: white;
+        }
+
+        .btn-purple {
+            background-color: #240224;
+            color: aliceblue;
+            font-size: 20px;
+        }
+
+        .btn-purple:hover {
+            background-color: #f360f3;
+        }
+
+        .slide-btn:hover {
+            background-color: #e78d06;
+        }
+
+        .carousel-item img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        #srh_process {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: linear-gradient(to bottom, #ffffff, #f1f1f1);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #srh_process thead {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            /* 紫藍漸層 */
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            /* 文字大寫 */
+        }
+
+        #srh_process tbody tr:nth-child(odd) {
+            background: linear-gradient(135deg, #d4f1ff, #9ed2f5);
+        }
+
+        #srh_process tbody tr:nth-child(even) {
+            background: linear-gradient(135deg, #9ed2f5, #007bff);
+        }
+
+        #srh_process tbody tr:hover {
+            background: linear-gradient(135deg, #ff7b00, #ff4800);
+            color: white;
+            transition: 0.3s ease-in-out;
+        }
+
+        #srh_process th {
+            text-align: center;
+        }
+
+        #srh_process td {
+            vertical-align: middle;
+        }
+
+        #srh_process button {
+            padding: 5px 10px;
+            border-radius: 20px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, #007bff, #0056b3) !important;
+            color: white;
+            border: none;
+        }
+
+        .btn-secondary {
+            background: linear-gradient(to right, #6c757d, #5a6268) !important;
+            color: white;
+            border: none;
+        }
+
+        .btn-danger {
+            background: linear-gradient(to right, #dc3545, #b02a37) !important;
+            color: white;
+            border: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+        }
+
+        .object-fit-cover {
+            object-fit: cover;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <section id="s01" class="py-1 w-100" style="background-color:#b42a64;position: sticky;top: 0;z-index: 10;">
+        <div class="container">
+            <div class="text-end">
+                <a href="#">
+                    <i class="fa-brands fa-square-facebook text-primary"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-square-x-twitter text-black"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-instagram text-danger"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-line text-success"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="s02" class="pt-3 w-100" style="background-color: #faf9f9;position: sticky;top:32px;z-index: 10;">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg" style="background-color: #faf9f9;">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="20241226-ex1.html">
+                        <img src="images/company_logo.jpg" alt="" style="width: 120px;height: 50px;">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto nav-links" style="white-space: nowrap;">
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=歐洲" data-region="歐洲">歐洲</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=大陸" data-region="大陸">大陸</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=紐澳" data-region="紐澳">紐澳</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=美加" data-region="美加">美加</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=中東" data-region="中東">中東</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=日本" data-region="日本">日本</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=韓國" data-region="韓國">韓國</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=東南亞" data-region="東南亞">東南亞</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=遊輪" data-region="遊輪">豪華遊輪</a>
+                            </li>
+                        </ul>
+                        <div class="dropdown mt-1 me-2">
+                            <button class="btn btn-outline-danger dropdown-toggle d-none fs-5 fw-900" type="button"
+                                id="s02_manager_panel_btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                管理者功能
+                            </button>
+
+                            <ul class="dropdown-menu dropdown-content" aria-labelledby="s02_manager_panel_btn">
+                                <li><a class="dropdown-item" href="20241226-ex1-member_control_panel_v1.html"
+                                        >會員管理</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-orders_control_panel_v1.html"
+                                        >訂單管理</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-process_control_panel_v1.html?region=歐洲"
+                                        >行程管理</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-report_control_panel_v1.html"
+                                        >營業報表</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-member_edit_panel_v1.html#account"
+                                        >帳號管理</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-member_edit_panel_v1.html#order_query"
+                                        >訂單查詢</a></li>
+                                <li><a class="dropdown-item" href="https://rate.bot.com.tw/xrt?Lang=zh-tw&redirect=true"
+                                        target="_blank">匯率查詢</a></li>
+                                <li><a class="dropdown-item" href="https://www.trivago.com.tw/" target="_blank">旅館查詢</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dropdown mt-1 me-2">
+                            <button class="btn btn-outline-danger dropdown-toggle d-none fs-5 fw-900" type="button"
+                                id="s02_member_panel_btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                會員功能
+                            </button>
+                            <ul class="dropdown-menu dropdown-content" aria-labelledby="s02_member_panel_btn">
+                                <li><a class="dropdown-item" href="20241226-ex1-member_edit_panel_v1.html#account"
+                                        >帳號管理</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-member_edit_panel_v1.html#order_query"
+                                        >訂單查詢</a></li>
+                                <li><a class="dropdown-item" href="https://rate.bot.com.tw/xrt?Lang=zh-tw&redirect=true"
+                                        target="_blank">匯率查詢</a></li>
+                                <li><a class="dropdown-item" href="https://www.trivago.com.tw/" target="_blank">旅館查詢</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="h4 text-success fw-900 me-3 d-none" id="s02_username_showtext"
+                            style="white-space: nowrap;">歡迎會員:<span class="h3 text-warning" id="s02_username_text"
+                                style="white-space: nowrap;"></span></span>
+                    </div>
+                    <div>
+                        <button class="btn btn-danger d-none" data-bs-toggle="logoutmodal" data-bs-target="#logoutModal"
+                            style="white-space: nowrap;" id="s02_logout_btn">登出</button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+    <section id="s03">
+        <div class="container mt-4">
+            <h2 class="text-center mb-4">我要報名</h2>
+
+            <div class="row mb-3" style="background: rgba(6, 35, 224, 0.5);color:#ffffff">
+                <div class="col-md-6">
+                    <img id="process-img" src="default.jpg" class="img-fluid rounded-start h-100 object-fit-cover"
+                        alt="行程圖片">
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h4 class="card-title mb-3" id="title">載入中...</h4>
+                        <p class="card-text"><strong>內容：</strong><span id="content">0</span></p>
+                        <p class="card-text"><strong>價格：</strong><span id="cost">$0</span></p>
+                        <p class="card-text"><strong>日期：</strong><span id="startdate">0</span>~</strong><span
+                                id="enddate">$0</span></p>
+                        <p class="card-text"><strong>名額：</strong><span id="signups">0</span></p>
+                        <p class="card-text"><strong>航班：</strong><span id="airplane">0</span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3" style="background: rgba(6, 35, 224, 0.2);">
+                <div class="col-md-6">
+                    <form id="signupForm">
+                        <input type="hidden" id="member_id" name="member_id">
+                        <input type="hidden" id="process_id" name="process_id">
+                        <input type="hidden" id="process_title" name="process_title">
+                        <input type="hidden" id="order_spent" name="order_spent">
+
+                        <div class="mb-3">
+                            <label for="name" class="form-label">姓名</label>
+                            <input type="text" class="form-control" id="username" name="username" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">電話</label>
+                            <input type="tel" class="form-control" id="tel" name="tel" readonly>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" readonly>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="adults" class="form-label">大人數量</label>
+                                <input type="number" class="form-control" id="adults" name="adults" min="0" max="10" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="children" class="form-label">小孩數量</label>
+                                <input type="number" class="form-control" id="children" name="children" min="0" max="10"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="note" class="form-label">備註</label>
+                            <textarea class="form-control" id="remark" name="remark" rows="3"></textarea>
+                        </div>
+
+                </div>
+                <div class="col-md-6">
+                    <h4>報名須知</h4>
+                    <p>
+                        1. 請填寫正確的個人資訊，以便聯絡。<br>
+                        2. 報名後若有任何問題，請儘早聯絡客服。<br>
+                        3. 報名以成功繳交費用為準，報名名額有限，請盡早報名。<br>
+                        4. 若因故無法參加，請提前告知並遵守退款規定。<br>
+                        5. 報名表格中所填寫的資料將作為報名確認依據。
+                    </p>
+                </div>
+                <div class="row my-3">
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary btn-lg">送出報名</button>
+                    </div>
+
+                </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section id="s11">
+        <div class="footer_content" style="background-color: #530c6e;color: #e6d4f3;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 col-12 left-area">
+                        <div class="mb-sm-5 mb-4 wow animate__animated animate__fadeInUp fadeInUp animate__slow"
+                            data-wow-delay="0s" style="visibility: visible; animation-name: fadeInUp;">
+                            <h1 class="fw-900 mt-5"> <a href="#"
+                                    style="text-decoration: none;color:#e6d4f3">綜彩旅行社有限公司</a></h1>
+                        </div>
+                        <div class="footer-info wow animate__animated animate__fadeInDown animate__slow"
+                            data-wow-delay="0s" style="visibility: visible; animation-name: fadeInDown;">
+                            <ul class="list-unstyled">
+                                <li>統一編號：27560645</li>
+                                <li>交觀甲 第6783號 / 品保 北1513</li>
+                                <li>負責人：吳佳筠 / 聯絡人：徐信杰</li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li>電話：<a href="tel:0225715838" class="d-inline-block">02-2571-5838</a>、<a
+                                        href="tel:0225634633" class="d-inline-block">02-2563-4633</a></li>
+                                <li>傳真：02-2562-2269</li>
+                                <li>地址：104台北市中山區松江路152號６樓603室</li>
+                                <li>信箱：<a href="mailto:colorfultravel@yahoo.com.tw">colorfultravel@yahoo.com.tw</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 wow animate__animated animate__slideInUp animate__slow" data-wow-delay="0s"
+                        style="visibility: visible; animation-name: slideInUp;">
+                        <div class="copyrights-info clearfix mt-4">
+                            <div class="copyrights d-inline-block mr-3 mb-2">Copyright © 綜彩旅行社有限公司 All Rights Reserved
+                            </div>
+                            <div class="copyrights d-inline-block">本網站內容享有著作權，禁止侵害，違者必究。</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="https://kit.fontawesome.com/176a59b465.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
+    <script type="text/javascript" charset="utf8"
+        src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script>
+        var member_id;
+        var process_id;
+
+        $(function () {
+
+
+            // 確認uid是否合法
+            if (getCookie("Uid01")) {
+
+                var JSONdata = {};
+                JSONdata["uid01"] = getCookie("Uid01");
+                console.log(JSON.stringify(JSONdata));
+
+                $.ajax({
+                    type: "POST",
+                    url: "20241226-ex1-member_control_api_v1.php?action=checkuid",
+                    data: JSON.stringify(JSONdata),
+                    dataType: "json",
+                    success: showdata_checkuid,
+                    error: function () {
+                        Swal.fire({
+                            title: "API介接錯誤?",
+                            text: "20241226-ex1-member_control_api_v1.php",
+                            icon: "error"
+                        });
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: "請先登入會員",
+                    icon: "info",
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: "確認",
+                    denyButtonText: `Don't save`,
+                    allowOutsideClick: false
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        location.href = "20241226-ex1.html"
+                    }
+                });
+            }
+
+            //s02 logout按紐監聽
+            $("#s02_logout_btn").click(function () {
+                setCookie("Uid01", "", 7);
+                location.href = "20241226-ex1.html";
+            });
+
+            // 取得行程資料
+            $(document).ready(function () {
+                const params = new URLSearchParams(window.location.search);
+                const id = params.get("id");
+
+                if (id) {
+                    $.ajax({
+                        url: "20241226-ex1-process_control_api_v1.php?action=getdetailprocess",
+                        type: "POST",
+                        data: { id: id },
+                        dataType: "json",
+                        success: function (res) {
+                            if (res.state) {
+                                if (res.data[0].signups >= 50) {
+                                    Swal.fire("抱歉", "該行程已額滿", "error").then((result) => {
+                                        if (result.isConfirmed) {
+                                            location.href = `20241226-ex1-process_list_panel_v1.html?region=${res.data[0].region}`;
+                                        }
+                                    });
+
+                                } else {
+                                    $("#title").text(res.data[0].title);
+                                    $("#process_title").val(res.data[0].title);
+                                    $("#content").text(res.data[0].content);
+                                    $("#cost").text(`NT$${Intl.NumberFormat('zh-TW').format(res.data[0].cost)}`);
+                                    $("#order_spent").val(res.data[0].cost);
+                                    $("#startdate").text(`${res.data[0].startdate}`);
+                                    $("#enddate").text(`${res.data[0].enddate}`);
+
+                                    const totalSlots = 50;
+                                    const remaining = totalSlots - res.data[0].signups;
+                                    $("#signups").text(`剩餘：${remaining} 人(滿員50人)`);
+                                    $("#airplane").text(`${res.data[0].airplane}`);
+                                    $("#process_id").val(res.data[0].id);
+                                    $("#process-img").attr("src", res.data[0].photo || "default.jpg");
+                                }
+
+                            } else {
+                                $("#process-detail").html(`<p class="text-danger">找不到行程資料。</p>`);
+                                $("#signupForm").hide();
+                            }
+                        },
+                        error: function () {
+                            Swal.fire("錯誤", "載入資料失敗", "error");
+                        }
+                    });
+
+                    // 送出報名表單
+                    $("#signupForm").on("submit", function (e) {
+                        e.preventDefault();
+                        $.ajax({
+                            url: "20241226-ex1-orders_control_api_v1.php?action=addorders",
+                            type: "POST",
+                            data: $(this).serialize(),
+                            dataType: "json",
+                            success: function (data) {
+                                if (data.state) {
+                                    Swal.fire("報名成功", "我們已收到您的報名資料！請您注意後續審核及繳費訊息!", "success").then((result) => {
+                                        if (result.isConfirmed) {
+                                            if (document.referrer) {
+                                                window.location.href = document.referrer;
+                                            } else {
+                                                window.history.back();
+                                            }
+                                        }
+                                    });
+                                } else {
+                                    Swal.fire("錯誤", data.message || "報名失敗", "error");
+                                }
+                            },
+                            error: function () {
+                                Swal.fire({
+                                    title: "API介接錯誤!",
+                                    text: "20241226-ex1-orders_control_api_v1.php",
+                                    icon: "error"
+                                });
+                            }
+                        });
+                    });
+                } else {
+                    $("#process-detail").html(`<p class="text-danger">未提供行程 ID</p>`);
+                    $("#signupForm").hide();
+                }
+            });
+
+        });
+
+        function showdata_checkuid(data) {
+            if (data.state) {
+
+                member_id = data.data.id;
+                $("#member_id").val(data.data.id);
+                $("#username").val(data.data.userName);
+                $("#tel").val(data.data.tel);
+                $("#email").val(data.data.email);
+
+                $("#s02_username_showtext").removeClass("d-none");
+                $("#s02_username_text").text(data.data.userName);
+
+                $("#s02_logout_btn").removeClass("d-none");
+                $("#s12").removeClass("d-none");
+                if (data.data.level != "" && data.data.level === "管理者") {
+
+                    $("#s02_manager_panel_btn").removeClass("d-none");
+                } else if (data.data.level != "") {
+                    $("#s02_member_panel_btn").removeClass("d-none");
+                }
+
+            } else {
+                Swal.fire({
+                    title: "請先登入會員!",
+                    showDenyButton: false,
+                    showCancelButton: false,
+                    confirmButtonText: "確認",
+                    denyButtonText: `Don't save`,
+                    allowOutsideClick: false
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        location.href = "20241226-ex1.html";
+                    }
+                });
+            }
+
+
+        }
+
+
+        // from w3s Cookie
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+    </script>
+
+
+</body>
+
+</html>
