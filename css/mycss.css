@@ -1,0 +1,301 @@
+/* 引用googlefont字體 */
+@import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Iansui&family=Kiwi+Maru&family=Klee+One&family=Ma+Shan+Zheng&family=Noto+Sans+TC:wght@100..900&family=Zen+Kaku+Gothic+Antique&display=swap');
+
+/* .iansui-regular {
+    font-family: "Iansui", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.noto-sans-tc {
+  font-family: "Noto Sans TC", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+.kiwi-maru-regular {
+    font-family: "Kiwi Maru", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.hachi-maru-pop-regular {
+  font-family: "Hachi Maru Pop", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.zen-kaku-gothic-antique-regular {
+  font-family: "Zen Kaku Gothic Antique", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ma-shan-zheng-regular {
+  font-family: "Ma Shan Zheng", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.klee-one-regular {
+  font-family: "Klee One", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+*/
+
+/* 配色，網址https://www.shutterstock.com/zh-Hant/blog/101-free-color-combinations-design-inspiration?pl=PPC_GOO_TW_FT_PM-&cr=c&kw=&ds_eid=700000001520943&ds_cid=71700000118877991&ds_ag=&ds_agid=&gad_source=1 */
+:root {
+    --mycolor01: #c2e6ff;
+    --mycolor02: #859f3c;
+    --mycolor03: #007f52;
+    --mycolor04: #45451f;
+    --mycolor05: #eb8f90;
+    --mycolor06: #ffb471;
+    --mycolor07: #cccccc;
+
+    --textcolor01: #dad9e9;
+    --textcolor02: #e44668;
+
+}
+
+/* 文字粗細設定，越大越粗 */
+.fw-100 {
+    font-weight: 100;
+}
+
+.fw-200 {
+    font-weight: 200;
+}
+
+.fw-300 {
+    font-weight: 300;
+}
+
+.fw-400 {
+    font-weight: 400;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.fw-800 {
+    font-weight: 800;
+}
+
+.fw-900 {
+    font-weight: 900;
+}
+
+.fw-1000 {
+    font-weight: 1000;
+}
+
+/* 設定背景置中，全圖 */
+.bg-cover{
+    background-position: center center;
+    background-size: cover;
+}
+
+/* 設定背景色 */
+
+.bg-001{
+    background-color: var(--mycolor01);
+}
+
+.bg-002{
+    background-color: var(--mycolor02);
+}
+
+.bg-003{
+    background-color: var(--mycolor03);
+}
+
+.bg-004{
+    background-color: var(--mycolor04);
+}
+
+.bg-005{
+    background-color: var(--mycolor05);
+}
+
+.bg-006{
+    background-color: var(--mycolor06);
+}
+
+.bg-007{
+    background-color: var(--mycolor07);
+}
+
+/* 外層myroller 內層roller*/
+/* 由左至右 */
+.myroller-l {
+    position: relative;
+    /* 設定捲軸的態樣 */
+    overflow: hidden;
+}
+
+
+/* 捲軸動畫，由左至右 */
+.myroller-l .roller {
+    position: absolute;
+    /* background-color:rgba(245, 243, 240, 0.459); */
+    background-image: linear-gradient(180deg, #df522369, #7f5ccf7a);
+    width: 100%;
+    height: 100%;
+    /* 設定由左至右遮過來 */
+    left: -100%;
+    top: 0;
+    /* 垂直置中絕招 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.myroller-l:hover .roller {
+    /* 上面left設定100%，這邊也要跟著改，如上面是top,這裡也要設定top */
+    left: 0;
+    /* 設定顯示的速度 */
+    transition: left 1s;
+}
+
+/* 由上而下 */
+.myroller-t {
+    position: relative;
+    /* 設定捲軸的態樣 */
+    overflow: hidden;
+}
+
+
+/* 捲軸動畫，由左至右 */
+.myroller-t .roller {
+    position: absolute;
+    /* background-color:rgba(245, 243, 240, 0.459); */
+    background-image: linear-gradient(180deg, #df522369, #7f5ccf7a);
+    width: 100%;
+    height: 100%;
+    /* 設定由左至右遮過來 */
+    top: -100%;
+    left: 0;
+    /* 垂直置中絕招 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.myroller-t:hover .roller {
+    /* 上面left設定100%，這邊也要跟著改，如上面是top,這裡也要設定top */
+    top: 0;
+    /* 設定顯示的速度 */
+    transition: top 1s;
+}
+
+.myroller-b {
+    position: relative;
+    /* 設定捲軸的態樣 */
+    overflow: hidden;
+}
+
+
+/* 捲軸動畫，由左至右 */
+.myroller-b .roller {
+    position: absolute;
+    /* background-color:rgba(245, 243, 240, 0.459); */
+    background-image: linear-gradient(180deg, #df522369, #7f5ccf7a);
+    width: 100%;
+    height: 100%;
+    /* 設定由左至右遮過來 */
+    bottom: -100%;
+    left:0;
+    /* 垂直置中絕招 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.myroller-b:hover .roller {
+    /* 上面left設定100%，這邊也要跟著改，如上面是top,這裡也要設定top */
+    bottom: 0;
+    /* 設定顯示的速度 */
+    transition: bottom 1s;
+}
+
+/* 響應式網頁設定 
+1.table-rwd
+2.data-th 隱藏標題
+3.span table-col 設定顯示方式 */
+
+@media screen and (max-width:768px) {
+    body{
+        background-image: linear-gradient(90deg, #e2dddc69, #e6a0bd7a);
+
+    }
+    .table-rwd thead {
+        /* 先把表格的標題拿掉 */
+        display: none;
+
+    }
+
+    .table-rwd tbody tr {
+        /* 資料呈直行顯示 */
+        display: block;
+        /* 設定邊框 實線 */
+        border: 2px solid var(--mycolor05);
+        /* 下推10px */
+        margin-bottom: 10px;
+
+
+    }
+
+    .table-rwd tbody tr td {
+        /* 資料呈直行顯示 */
+        display: block;
+        /* 將超出版的東西隱藏  */
+        overflow: hidden;
+        /* 設定表格內漸層顏色 */
+        background-image: linear-gradient(90deg, #e2dddc69, #9becc47a);
+
+    }
+
+    /* before:偽元素 設定顯示在td之前*/
+    .table-rwd tbody tr td::before {
+        /* attr將data-th抓取出來 */
+        content: attr(data-th) " : ";
+        /* 以下均為隱藏欄位字型、顏色，大小設定 */
+        font-weight: 900;
+        color: var(--mycolor03);
+        font-size: 18px;
+        /* 將縮小的畫面重新排版，要記 */
+        display: block;
+        float: left;
+        /* 切割版面30% */
+        width: 30%;
+        /* 將before偽元素的字靠右 */
+        text-align: right;
+        /* 將before偽元素的字靠右後推20px */
+        padding-right: 20px;
+
+    }
+
+    /* 將縮小的畫面重新排版，要記 */
+    .table-rwd tbody tr td span.table-col {
+        display: block;
+        float: left;
+        /* 切割版面70% */
+        width: 70%;
+    }
+
+}

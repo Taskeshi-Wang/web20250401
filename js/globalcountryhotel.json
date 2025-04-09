@@ -1,0 +1,350 @@
+{
+    "cities": [
+      {
+        "name": "馬德里",
+        "country": "西班牙",
+        "latitude": 40.4168,
+        "longitude": -3.7038,
+        "famous_hotels": [
+          {
+            "name": "馬德里瑞士酒店",
+            "latitude": 40.4167,
+            "longitude": -3.7037
+          },
+          {
+            "name": "馬德里普拉多大酒店",
+            "latitude": 40.4141,
+            "longitude": -3.6955
+          },
+          {
+            "name": "阿卡拉宮酒店",
+            "latitude": 40.4196,
+            "longitude": -3.7027
+          }
+        ]
+      },
+      {
+        "name": "巴塞隆納",
+        "country": "西班牙",
+        "latitude": 41.3784,
+        "longitude": 2.1925,
+        "famous_hotels": [
+          {
+            "name": "巴塞羅那瑞士酒店",
+            "latitude": 41.3800,
+            "longitude": 2.1920
+          },
+          {
+            "name": "阿爾瑪巴塞隆納酒店",
+            "latitude": 41.3925,
+            "longitude": 2.1986
+          },
+          {
+            "name": "波布萊酒店",
+            "latitude": 41.3850,
+            "longitude": 2.1942
+          }
+        ]
+      },
+      {
+        "name": "雷克雅未克",
+        "country": "冰島",
+        "latitude": 64.1355,
+        "longitude": -21.8954,
+        "famous_hotels": [
+          {
+            "name": "雷克雅未克城市酒店",
+            "latitude": 64.1465,
+            "longitude": -21.9333
+          },
+          {
+            "name": "雷克雅未克大酒店",
+            "latitude": 64.1462,
+            "longitude": -21.9301
+          },
+          {
+            "name": "哈帕酒店",
+            "latitude": 64.1500,
+            "longitude": -21.9402
+          }
+        ]
+      },
+      {
+        "name": "奧克蘭",
+        "country": "新西蘭",
+        "latitude": -36.8485,
+        "longitude": 174.7633,
+        "famous_hotels": [
+          {
+            "name": "奧克蘭大酒店",
+            "latitude": -36.8455,
+            "longitude": 174.7624
+          },
+          {
+            "name": "奧克蘭瑪麗娜酒店",
+            "latitude": -36.8442,
+            "longitude": 174.7691
+          },
+          {
+            "name": "奧克蘭皇冠酒店",
+            "latitude": -36.8480,
+            "longitude": 174.7657
+          }
+        ]
+      },
+      {
+        "name": "倫敦",
+        "country": "英國",
+        "latitude": 51.5074,
+        "longitude": -0.1278,
+        "famous_hotels": [
+          {
+            "name": "倫敦大酒店",
+            "latitude": 51.5070,
+            "longitude": -0.1280
+          },
+          {
+            "name": "哈羅德酒店",
+            "latitude": 51.4995,
+            "longitude": -0.1420
+          },
+          {
+            "name": "希爾頓倫敦酒店",
+            "latitude": 51.5090,
+            "longitude": -0.1275
+          }
+        ]
+      },
+      {
+        "name": "巴黎",
+        "country": "法國",
+        "latitude": 48.8566,
+        "longitude": 2.3522,
+        "famous_hotels": [
+          {
+            "name": "巴黎四季酒店",
+            "latitude": 48.8671,
+            "longitude": 2.3125
+          },
+          {
+            "name": "麗思卡爾頓酒店",
+            "latitude": 48.8650,
+            "longitude": 2.3162
+          },
+          {
+            "name": "巴黎大酒店",
+            "latitude": 48.8649,
+            "longitude": 2.3256
+          }
+        ]
+      },
+      {
+        "name": "紐約市",
+        "country": "美國",
+        "latitude": 40.7128,
+        "longitude": -74.0060,
+        "famous_hotels": [
+          {
+            "name": "紐約大西洋酒店",
+            "latitude": 40.7114,
+            "longitude": -74.0070
+          },
+          {
+            "name": "曼哈頓瑞吉酒店",
+            "latitude": 40.7580,
+            "longitude": -73.9741
+          },
+          {
+            "name": "紐約美憶酒店",
+            "latitude": 40.7150,
+            "longitude": -74.0110
+          }
+        ]
+      },
+      {
+        "name": "洛杉磯",
+        "country": "美國",
+        "latitude": 34.0522,
+        "longitude": -118.2437,
+        "famous_hotels": [
+          {
+            "name": "比弗利山莊酒店",
+            "latitude": 34.0696,
+            "longitude": -118.4053
+          },
+          {
+            "name": "洛杉磯威斯汀酒店",
+            "latitude": 34.0540,
+            "longitude": -118.2570
+          },
+          {
+            "name": "洛杉磯四季酒店",
+            "latitude": 34.0693,
+            "longitude": -118.2378
+          }
+        ]
+      },
+      {
+        "name": "北京",
+        "country": "中國",
+        "latitude": 39.9042,
+        "longitude": 116.4074,
+        "famous_hotels": [
+          {
+            "name": "北京王府半島酒店",
+            "latitude": 39.9161,
+            "longitude": 116.3925
+          },
+          {
+            "name": "北京四季酒店",
+            "latitude": 39.9190,
+            "longitude": 116.3435
+          },
+          {
+            "name": "北京國際大酒店",
+            "latitude": 39.9336,
+            "longitude": 116.3063
+          }
+        ]
+      },
+      {
+        "name": "上海",
+        "country": "中國",
+        "latitude": 31.2304,
+        "longitude": 121.4737,
+        "famous_hotels": [
+          {
+            "name": "上海外灘英迪格酒店",
+            "latitude": 31.2381,
+            "longitude": 121.4916
+          },
+          {
+            "name": "上海虹橋金茂大廈酒店",
+            "latitude": 31.2302,
+            "longitude": 121.3280
+          },
+          {
+            "name": "上海麗思卡爾頓酒店",
+            "latitude": 31.2362,
+            "longitude": 121.4821
+          }
+        ]
+      },
+      {
+        "name": "東京",
+        "country": "日本",
+        "latitude": 35.6762,
+        "longitude": 139.6503,
+        "famous_hotels": [
+          {
+            "name": "東京皇家公園酒店",
+            "latitude": 35.6938,
+            "longitude": 139.7020
+          },
+          {
+            "name": "東京希爾頓酒店",
+            "latitude": 35.6890,
+            "longitude": 139.6920
+          },
+          {
+            "name": "東京四季酒店",
+            "latitude": 35.6700,
+            "longitude": 139.7400
+          }
+        ]
+      },
+      {
+        "name": "杜拜",
+        "country": "阿聯酋",
+        "latitude": 25.276987,
+        "longitude": 55.296249,
+        "famous_hotels": [
+          {
+            "name": "哈利法塔酒店",
+            "latitude": 25.1975,
+            "longitude": 55.2744
+          },
+          {
+            "name": "杜拜帆船酒店",
+            "latitude": 25.1413,
+            "longitude": 55.1854
+          },
+          {
+            "name": "杜拜瑪麗娜萬豪酒店",
+            "latitude": 25.0764,
+            "longitude": 55.1400
+          }
+        ]
+      },
+      {
+        "name": "首爾",
+        "country": "韓國",
+        "latitude": 37.5665,
+        "longitude": 126.9780,
+        "famous_hotels": [
+          {
+            "name": "首爾廣場酒店",
+            "latitude": 37.5663,
+            "longitude": 126.9784
+          },
+          {
+            "name": "首爾希爾頓酒店",
+            "latitude": 37.5608,
+            "longitude": 126.9822
+          },
+          {
+            "name": "首爾奧克伍德酒店",
+            "latitude": 37.5785,
+            "longitude": 126.9832
+          }
+        ]
+      },
+      {
+        "name": "雪梨",
+        "country": "澳大利亞",
+        "latitude": -33.8688,
+        "longitude": 151.2093,
+        "famous_hotels": [
+          {
+            "name": "雪梨歌劇院酒店",
+            "latitude": -33.8587,
+            "longitude": 151.2140
+          },
+          {
+            "name": "雪梨海港酒店",
+            "latitude": -33.8628,
+            "longitude": 151.2152
+          },
+          {
+            "name": "雪梨奧林匹克酒店",
+            "latitude": -33.8785,
+            "longitude": 151.1993
+          }
+        ]
+      },
+      {
+        "name": "墨爾本",
+        "country": "澳大利亞",
+        "latitude": -37.8136,
+        "longitude": 144.9631,
+        "famous_hotels": [
+          {
+            "name": "墨爾本瑪麗娜酒店",
+            "latitude": -37.8190,
+            "longitude": 144.9574
+          },
+          {
+            "name": "墨爾本皇冠大酒店",
+            "latitude": -37.8231,
+            "longitude": 144.9577
+          },
+          {
+            "name": "墨爾本麗思卡爾頓酒店",
+            "latitude": -37.8184,
+            "longitude": 144.9674
+          }
+        ]
+      }
+    ]
+  }
+  
