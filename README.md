@@ -8,11 +8,11 @@
 
 ### 🔷 前台畫面
 
-![前台首頁](./screenshots/frontend.jpg)
+![前台首頁](images/screenshots/frontend.jpg)
 
 ### 🔶 後台管理系統
 
-![後台管理](./screenshots/backend.jpg)
+![後台管理](images/screenshots/backend.jpg)
 
 > 圖片請放在 `screenshots` 資料夾中，並以相對路徑引入
 
