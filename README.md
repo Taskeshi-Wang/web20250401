@@ -8,7 +8,7 @@
 
 ### 🔷 前台畫面
 
-![前台首頁](images/screenshots/frontend.jpg)
+![前台首頁](../images/screenshots/首頁.jpg)
 
 ### 🔶 後台管理系統
 
