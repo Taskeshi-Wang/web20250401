@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>形象設計(旅遊公司)</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mycss.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            font-family: "Kiwi Maru", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .dropdown-content {
+            position: fixed;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .nav-links a:hover {
+            background-color: #f10e65;
+            border-radius: 5px;
+        }
+
+        .white-black-btn {
+            background-color: white;
+            color: black;
+            border: 0px solid;
+            padding: 5px 30px;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+            text-decoration: none;
+        }
+
+        .white-black-btn:hover {
+            background-color: rgb(80, 3, 80);
+            color: white;
+        }
+
+        .intro:hover {
+            color: rgb(112, 5, 103);
+            border: 2px solid;
+        }
+
+        .yellow-black-btn {
+            background-color: rgb(238, 176, 105);
+            color: black;
+            border: 0px solid;
+            margin: auto;
+            width: 150px;
+            padding: 5px 20px;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .intro:hover .yellow-black-btn {
+            background-color: rgb(80, 3, 80);
+            color: white;
+        }
+
+        .btn-purple {
+            background-color: #240224;
+            color: aliceblue;
+            font-size: 20px;
+        }
+
+        .btn-purple:hover {
+            background-color: #f360f3;
+        }
+
+        .slide-btn:hover {
+            background-color: #e78d06;
+        }
+
+        .carousel-item img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+
+</head>
+
+<body>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/counterup2@2.0.2/dist/index.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="https://kit.fontawesome.com/176a59b465.js" crossorigin="anonymous"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <section id="s01" class="py-1" style="background-color:#b42a64;position: sticky;top:0; z-index: 10;">
+        <div class="container">
+            <div class="text-end">
+                <a href="#">
+                    <i class="fa-brands fa-square-facebook text-primary"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-square-x-twitter text-black"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-instagram text-danger"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-line text-success"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="s02" class="" style="background-color: #faf9f9;position: sticky;top: 32px;z-index: 10;">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg" style="background-color: #faf9f9;">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="20241226-ex1.html">
+                        <img src="images/company_logo.jpg" alt="" style="width: 152px;height: 54px;">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto nav-links" style="white-space: nowrap;">
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=歐洲" target="_blank"
+                                    data-region="歐洲">歐洲</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=大陸" target="_blank"
+                                    data-region="大陸">大陸</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=紐澳" target="_blank"
+                                    data-region="紐澳">紐澳</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=美加" target="_blank"
+                                    data-region="美加">美加</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=中東" target="_blank"
+                                    data-region="中東">中東</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=日本" target="_blank"
+                                    data-region="日本">日本</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=韓國" target="_blank"
+                                    data-region="韓國">韓國</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=東南亞" target="_blank"
+                                    data-region="東南亞">東南亞</a>
+                            </li>
+                            <li class="nav-item fw-1000 fs-4">
+                                <a class="nav-link" aria-current="page"
+                                    href="20241226-ex1-process_list_panel_v1.html?region=遊輪" target="_blank"
+                                    data-region="遊輪">豪華遊輪</a>
+                            </li>
+                        </ul>
+                        <div class="dropdown mt-1 me-2">
+                            <button class="btn btn-outline-danger dropdown-toggle d-none fs-5 fw-900" type="button"
+                                id="s02_manager_panel_btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                管理者功能
+                            </button>
+                            <ul class="dropdown-menu dropdown-content" aria-labelledby="s02_manager_panel_btn">
+                                <li><a class="dropdown-item" href="20241226-ex1-member_control_panel_v1.html"
+                                        target="_blank">會員管理</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-orders_control_panel_v1.html"
+                                        target="_blank">訂單管理</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-process_control_panel_v1.html?region=歐洲"
+                                        target="_blank">行程管理</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-report_control_panel_v1.html"
+                                        target="_blank">營業報表</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-member_edit_panel_v1.html#account"
+                                        target="_blank">帳號管理</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-member_edit_panel_v1.html#order_query"
+                                        target="_blank">訂單查詢</a></li>
+                                <li><a class="dropdown-item" href="https://rate.bot.com.tw/xrt?Lang=zh-tw&redirect=true"
+                                        target="_blank">匯率查詢</a></li>
+                                <li><a class="dropdown-item" href="https://www.trivago.com.tw/" target="_blank">旅館查詢</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dropdown mt-1 me-2">
+                            <button class="btn btn-outline-danger dropdown-toggle d-none fs-5 fw-900" type="button"
+                                id="s02_member_panel_btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                會員功能
+                            </button>
+                            <ul class="dropdown-menu dropdown-content" aria-labelledby="s02_member_panel_btn">
+                                <li><a class="dropdown-item" href="20241226-ex1-member_edit_panel_v1.html#account"
+                                        target="_blank">帳號管理</a></li>
+                                <li><a class="dropdown-item" href="20241226-ex1-member_edit_panel_v1.html#order_query"
+                                        target="_blank">訂單查詢</a></li>
+                                <li><a class="dropdown-item" href="https://rate.bot.com.tw/xrt?Lang=zh-tw&redirect=true"
+                                        target="_blank">匯率查詢</a></li>
+                                <li><a class="dropdown-item" href="https://www.trivago.com.tw/" target="_blank">旅館查詢</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <span class="h4 text-success fw-900 me-3 d-none" id="s02_username_showtext"
+                                style="white-space: nowrap;">歡迎會員:<span class="h3 text-warning" id="s02_username_text"
+                                    style="white-space: nowrap;"></span></span>
+                        </div>
+                        <div>
+                            <button class="btn btn-warning d-flex mx-1" data-bs-toggle="modal"
+                                style="white-space: nowrap;" data-bs-target="#registerModal"
+                                id="s02_reg_btn">註冊</button>
+                        </div>
+                        <div>
+                            <button class="btn btn-success d-flex mx-1" data-bs-toggle="modal"
+                                data-bs-target="#loginModal" style="white-space: nowrap;" id="s02_login_btn">登入</button>
+                        </div>
+                        <div>
+                            <button class="btn btn-danger d-none" data-bs-toggle="logoutmodal"
+                                data-bs-target="#logoutModal" style="white-space: nowrap;"
+                                id="s02_logout_btn">登出</button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </section>
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+        <div class="modal-test modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-success">
+                    <h1 class="modal-title display-5 fw-900" id="registerModalLabel">會員註冊</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="regForm" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="d-flex flex-column h-100">
+                                    <div class="display-6 fw-900 my-3">會員守則</div>
+                                    <p>1.招標未經一遍大全對。</p>
+                                    <p>2.招標未經一遍大全對。</p>
+                                    <p>3.招標未經一遍大全對。</p>
+                                    <p>4.招標未經一遍大全對。</p>
+
+                                    <div class="form-check form-switch mt-auto">
+                                        <input type="checkbox" class="form-check-input" role="switch" id="chk01_reg"
+                                            name="chk01_reg">
+                                        <label for="" class="form-check-label">不同意</label>
+                                        <div class="valid-feedback">繼續</div>
+                                        <div class="invalid-feedback">須同意才能註冊</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">帳號:</label>
+                                    <input type="text" class="form-control is-invalid" id="username_reg"
+                                        name="username_reg">
+                                    <div class="valid-feedback" id="regModal_username_valid_feedback">符合規則</div>
+                                    <div class="invalid-feedback" id="regModal_username_invalid_feedback">不符合規則
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">密碼</label>
+                                    <input type="password" class="form-control is-invalid" id="password_reg"
+                                        name="password_reg">
+                                    <div class="valid-feedback">符合規則</div>
+                                    <div class="invalid-feedback">不符合規則</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">確認密碼</label>
+                                    <input type="password" class="form-control is-invalid" id="re_password_reg"
+                                        name="re_password_reg">
+                                    <div class="valid-feedback">符合規則</div>
+                                    <div class="invalid-feedback">不符合規則</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">手機電話</label>
+                                    <input type="tel" class="form-control is-invalid" id="tel_reg" name="tel_reg">
+                                    <div class="valid-feedback" id="regModal_tel-valid-feedback">符合規則</div>
+                                    <div class="invalid-feedback" id="regModal_tel-invalid-feedback">不符合規則</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="" class="form-label">E-mail</label>
+                                    <input type="email" class="form-control is-invalid" id="email_reg" name="email_reg">
+                                    <div class="valid-feedback">符合規則</div>
+                                    <div class="invalid-feedback">不符合規則</div>
+                                </div>
+                                <div class="m-3">
+                                    <span>上傳大頭照(圖片)</span>
+                                    <input type="file" class="form-control form-control-lg" id="file_upload"
+                                        name="file_upload">
+                                    <div class="valid-feedback">上傳格式為jpeg or png or gif</div>
+                                    <div class="invalid-feedback">不符合上傳格式</div>
+                                    <img src="" alt="" class="img-fluid w-50 mt-3 d-none" id="prveImg">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="ok_btn_reg" type="submit">確認</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-primary">
+                    <h1 class="modal-title fs-5" id="loginModalLabel text-align-middle">會員登入</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="" class="form-label">帳號:</label>
+                        <input type="text" class="form-control is-invalid" id="username_login" name="username_login">
+                        <div class="invalid-feedback">請輸入帳號</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">密碼</label>
+                        <input type="password" class="form-control is-invalid" id="password_login"
+                            name="password_login">
+                        <div class="invalid-feedback">請輸入密碼</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary" id="ok_btn_login">登入</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="s03">
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active slide-btn" aria-current="true" aria-label="Slide 1"
+                        style="border-radius: 100%;width: 20px;height: 20px;"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        class="slide-btn" aria-label="Slide 2"
+                        style="border-radius: 100%;width: 20px;height: 20px;"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        class="slide-btn" aria-label="Slide 3"
+                        style="border-radius: 100%;width: 20px;height: 20px;"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                        class="slide-btn" aria-label="Slide 4"
+                        style="border-radius: 100%;width: 20px;height: 20px;"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+                        class="slide-btn" aria-label="Slide 5"
+                        style="border-radius: 100%;width: 20px;height: 20px;"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5"
+                        class="slide-btn" aria-label="Slide 6"
+                        style="border-radius: 100%;width: 20px;height: 20px;"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6"
+                        class="slide-btn" aria-label="Slide 7"
+                        style="border-radius: 100%;width: 20px;height: 20px;"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="7"
+                        class="slide-btn" aria-label="Slide 8"
+                        style="border-radius: 100%;width: 20px;height: 20px;"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="8"
+                        class="slide-btn" aria-label="Slide 9"
+                        style="border-radius: 100%;width: 20px;height: 20px;"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="9"
+                        class="slide-btn" aria-label="Slide 10"
+                        style="border-radius: 100%;width: 20px;height: 20px;"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item bg-cover active">
+                        <img src="images/202501232213340.png" class="img-fluid" alt="...">
+                    </div>
+                    <div class="carousel-item bg-cover">
+                        <img src="images/202412101256090.png" class="img-fluid" alt="...">
+                    </div>
+                    <div class="carousel-item bg-cover">
+                        <img src="images/202412101202370.png" class="img-fluid">
+                    </div>
+                    <div class="carousel-item bg-cover">
+                        <img src="images/202412101200400.png" class="img-fluid" alt="...">
+                    </div>
+                    <div class="carousel-item bg-cover">
+                        <img src="images/202410291622100.png" class="img-fluid" alt="...">
+                    </div>
+                    <div class="carousel-item bg-cover">
+                        <img src="images/202410242049230.png" class="img-fluid" alt="...">
+                    </div>
+                    <div class="carousel-item bg-cover">
+                        <img src="images/202410241940330.png" class="img-fluid" alt="...">
+                    </div>
+                    <div class="carousel-item bg-cover">
+                        <img src="images/202412101256490.png" class="img-fluid" alt="...">
+                    </div>
+                    <div class="carousel-item bg-cover">
+                        <img src="images/202408102153350.png" class="img-fluid" alt="...">
+                    </div>
+                    <div class="carousel-item bg-cover">
+                        <img src="images/202412101257230.png" class="img-fluid" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+    </section>
+    <section id="s12" class="d-none">
+        <div class="container border border-2 shadow-lg my-2">
+            <div class="row bg-007 fw-900 justify-content-center fs-4 text-bg-danger">搜尋您喜愛的行程</div>
+            <div class="row mt-3">
+                <div class="mb-3 col-12 col-md-2">
+                    <input type="date" class="form-control" id="start_date" name="start_date">
+                </div>
+                <div class="mb-3 col-12 col-md-2">
+                    <input type="date" class="form-control" id="end_date" name="end_date">
+                </div>
+                <div class="mb-3 col-12 col-md-3">
+                    <select name="selectglobalregion" id="selectglobalregion" class="form-select">
+                        <option value="" class="text-center" selected disabled>選擇旅遊的地區</option>
+                    </select>
+                </div>
+                <div class="mb-3 col-12 col-md-3">
+                    <input type="text" class="form-control" id="process_keyword" name="process_keyword"
+                        placeholder="關鍵字:國家或城市">
+                </div>
+                <div class="mb-3 col-md-2">
+                    <button class="col-12 btn text-bg-primary fw-900" type="submit" id="travel_srh_btn">搜尋最佳行程</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="s04" class="bg-001">
+        <div class="container">
+            <div class="row">
+                <h1
+                    class="p-5 text-center fw-1000 wow animate__animated animate__backInLeft animate__delay-0s animate__slow">
+                    精選行程</h1>
+            </div>
+            <div class="row">
+                <div class="col-md-12 navbar bg-001 container-fluid justify-content-center 
+                wow animate__animated animate__backInRight animate__delay-0s animate__slow">
+                    <a class="white-black-btn m-2 fw-1000" data-region="歐洲">歐洲</a>
+                    <a class="white-black-btn m-2 fw-1000" data-region="大陸">大陸</a>
+                    <a class="white-black-btn m-2 fw-1000" data-region="紐澳">紐澳</a>
+                    <a class="white-black-btn m-2 fw-1000" data-region="美加">美加</a>
+                    <a class="white-black-btn m-2 fw-1000" data-region="中東">中東</a>
+                    <a class="white-black-btn m-2 fw-1000" data-region="日本">日本</a>
+                    <a class="white-black-btn m-2 fw-1000" data-region="韓國">韓國</a>
+                    <a class="white-black-btn m-2 fw-1000" data-region="東南亞">東南亞</a>
+                    <a class="white-black-btn m-2 fw-1000" data-region="遊輪">豪華遊輪</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section id="s05 bg-cover" style="background-image: url(images/小風景01.jpg);">
+        <div class="container wow animate__animated animate__zoomIn animate__delay-0s animate__slow">
+            <div class="row" id="result-container">
+                <!-- 插入卡片 -->
+            </div>
+            <nav class="mt-4">
+                <ul class="pagination justify-content-center" id="pagination">
+                    <!-- 插入分頁按紐 -->
+                </ul>
+            </nav>
+        </div>
+        <div class="p-3 d-flex justify-content-center">
+            <a href="20241226-ex1-process_list_panel_v1.html?region=歐洲" target="_blank" class="btn btn-purple btn-lg fw-900" style="border-radius: 50px;">更多精選行程</a>
+        </div>
+        </div>
+    </section>
+    <section id="s06" class="p-3 bg-cover"
+        style="background-image: url(images/小風景09.jpg);background-attachment: fixed;height: 40vh;">
+        <div class="row d-flex text-center align-items-center" style="height: 40vh;">
+            <h1 class="fw-900 text-white wow animate__animated animate__zoomIn animate__delay-0s animate__slow">最新消息
+            </h1>
+        </div>
+    </section>
+    <section id="s07" class=" bg-007 bg-cover">
+        <div class="container">
+            <div class="row" style="height: 150px;">
+                <h1
+                    class="d-flex align-items-center justify-content-center fw-1000 wow animate__animated animate__zoomIn animate__delay-0s animate__slow">
+                    文章分享</h1>
+            </div>
+            <div class="row wow animate__animated animate__zoomIn animate__delay-0s animate__slow">
+                <div class="col-sm-12 col-md-6 col-lg-4 my-3">
+                    <iframe
+                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02fwy3avvNRoCFKxRJz4sneHa21WR96s8eXZEBgVpv2DucP6SuMbfFMjeZeoubMsCDl%26id%3D100063803570109&amp;show_text=true&amp;width=500"
+                        width="100%" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                        allowfullscreen="true"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 my-3">
+                    <iframe
+                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0g43v43VD7n1iLoqTfWPPutNZyKbJLnrTyauPcmDVDfW33qgVmDeEU5paNY3W3GHl%26id%3D100063803570109&amp;show_text=true&amp;width=500"
+                        width="100%" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                        allowfullscreen="true"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 my-3">
+                    <iframe
+                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02pb8Ro6HKzsDYyCHQ9yWBMoDCy3ZBrgHc4SMyb7wP69MSuaBmGCu9japUi6bBFQLYl%26id%3D100063803570109&amp;show_text=true&amp;width=500"
+                        width="100%" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                        allowfullscreen="true"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 my-3">
+                    <iframe
+                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02T5jKxz4SKdWd6x1cU8qyPzRazicZ5mrUztGZhVu5oJ73xNysNYDAkyFf5VZg3XAvl%26id%3D100063803570109&amp;show_text=true&amp;width=500"
+                        width="100%" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                        allowfullscreen="true"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 my-3">
+                    <iframe
+                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02mcgiuqv6GCLkVno5RVpU8b1zbAPSnufg8QtYDaKRGoJUNCa1GCqH1r362oWpXBmSl%26id%3D100063803570109&amp;show_text=true&amp;width=500"
+                        width="100%" height="410" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                        allowfullscreen="true"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 my-3">
+                    <iframe
+                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0U3dbmWMarQS2JH9z4YCTQs2MshZwUwSnRXrd28v56L9YGg4RbuuLLoF5ZboXHSYFl%26id%3D100063803570109&amp;show_text=true&amp;width=500"
+                        width="100%" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                        allowfullscreen="true"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 my-3">
+                    <iframe
+                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02pb8Ro6HKzsDYyCHQ9yWBMoDCy3ZBrgHc4SMyb7wP69MSuaBmGCu9japUi6bBFQLYl%26id%3D100063803570109&amp;show_text=true&amp;width=500"
+                        width="100%" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                        allowfullscreen="true"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 my-3">
+                    <iframe
+                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02sVQ3mU9VSNgScC17pyfznP3Z2TbGpQHJGFrxwngsCe4Jm5WEE1hQe2r1he2N3hACl%26id%3D100063803570109&amp;show_text=true&amp;width=500"
+                        width="100%" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                        allowfullscreen="true"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4 my-3">
+                    <iframe
+                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0C7babGPYy8GgXhuP9S6kYDXee27AgC4bFoM4JHhwgVm6LSfFVvfCn58P6rKHf2ppl%26id%3D100063803570109&amp;show_text=true&amp;width=500"
+                        width="100%" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                        allowfullscreen="true"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="s08">
+        <div class="container-fluid">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-5 bg-cover animate_slow  wow animate__animated animate__slideInDown animate__slow"
+                    data-wow-delay="0s" style="background-image: url(images/company_logo.jpg);  width: 300px;
+                    height: 100px;
+                    object-fit: cover;">
+
+                </div>
+                <div class="col-7 p-5">
+                    <div class="h1 wow animate__animated animate__slideInDown animate__slow" data-wow-delay="0s">關於綜彩
+                    </div>
+                    <div class="h1 mb-5 wow animate__animated animate__slideInDown animate__slow" data-wow-delay="0s">
+                        <span class="text-info">綜彩旅行社有限公司</span>
+                    </div>
+                    <p class="mb-1 fw-900 wow animate__animated animate__slideInDown animate__slow" data-wow-delay="0s">
+                        綜彩旅行社有限公司
+                        全體皆以最大的心力來為客戶做最好的行程安排，只為讓您在優美的渡假空間中得到最大的休息放鬆和最好的遊樂品質。提供迅速、確實、經濟實惠的最貼心的服務，一直是綜彩的思想信念。只要是綜彩出團絕對是最佳的品質保證有口皆碑，這亦是最大的驕傲。
+                    </p>
+                    <div class="row mt-5">
+                        <div class="col-md-3">
+                            <div class="h4 fw-900">出遊國家</div>
+                            <div class="h2 fw-900 counter">98<span class="h4">/個</span></div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="h4 fw-900">獲獎數目</div>
+                            <div class="h2 fw-900 counter01">25<span class="h4">/項</span></div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="h4 fw-900">專業認證</div>
+                            <div class="h2 fw-900 counter02">32<span class="h4">/項</span></div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="h4 fw-900">營業據點</div>
+                            <div class="h2 fw-900 counter03">5<span class="h4">/個</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="s09">
+        <div class="row">
+            <nav class="navbar" style="background-color: #7b5995;">
+                <form class="container-fluid justify-content-center wow animate__animated animate__zoomIn animate__slow"
+                    data-wow-delay="0s">
+                    <button class="white-black-btn m-2 fw-1000" type="button">關於綜彩</button>
+                    <button class="white-black-btn m-2 fw-1000" type="button">出國總覽</button>
+                    <button class="white-black-btn m-2 fw-1000" type="button">文章分享</button>
+                    <button class="white-black-btn m-2 fw-1000" type="button">線上說明會</button>
+                    <button class="white-black-btn m-2 fw-1000" type="button">聯絡我們</button>
+                    <button class="white-black-btn m-2 fw-1000" type="button">下載專區</button>
+                </form>
+            </nav>
+        </div>
+    </section>
+    <section id="s10" class="bg-cover" style="background-image: url(images/小風景07.jpg);">
+        <div class="container p-3">
+            <div class="row" style="height: 150px;">
+                <h1 class="d-flex align-items-center justify-content-center fw-1000">聯絡我們</h1>
+                <h5 class="d-flex align-items-center justify-content-center fw-900 mb-3">請留下您聯絡資料，收到您聯絡資料後，由服務專員跟您聯繫！
+                </h5>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.4055103752557!2d121.5328673!3d25.054241400000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a960977549f7%3A0x112b4a61fad5ea66!2z57ac5b2p5peF6KGM56S-5pyJ6ZmQ5YWs5Y-4!5e0!3m2!1szh-TW!2stw!4v1736475763757!5m2!1szh-TW!2stw"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="*姓名"
+                            style="font-weight: 900;font-size: large;">
+                    </div>
+                    <div class="mb-3">
+                        <select name="" id="" class="form-select form-select-lg text-center">
+                            <option value="" selected>----選擇行程方案----</option>
+                            <option value="基本方案">歐洲浪漫旅行</option>
+                            <option value="促銷方案">大陸尋奇旅行</option>
+                            <option value="優惠方案">紐澳自然旅行</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <select name="selectCity" id="selectCity" class="form-select form-control-lg">
+                            <option value="" class="text-center" selected disabled>----請選擇居住縣市----</option>
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <select name="selectArea" id="selectArea" class="form-select form-control-lg">
+                            <option value="" class="text-center" selected disabled>----請選擇行政區域----</option>
+                            <option value="">西屯區</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control form-control-lg" placeholder="*住址"
+                            style="font-weight: 900;font-size: large;">
+                    </div>
+                    <div class="mb-3">
+                        <input type="tel" class="form-control form-control-lg" placeholder="*電話"
+                            style="font-weight: 900;font-size: large;">
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control form-control-lg" placeholder="*E-Mail"
+                            style="font-weight: 900;font-size: large;">
+                    </div>
+                    <div class="mb-3">
+                        <input type="number" min="1" max="100" class="form-control form-control-lg" placeholder="*報名人數"
+                            style="font-weight: 900;font-size: large;">
+                    </div>
+                    <div class="text-end">
+                        <button class="btn btn-secondary ">取消</button>
+                        <button class="btn btn-primary">確認送出</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="s11">
+        <div class="footer_content" style="background-color: #530c6e;color: #e6d4f3;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 col-12 left-area">
+                        <div class="mb-sm-5 mb-4 wow animate__animated animate__fadeInUp fadeInUp animate__slow"
+                            data-wow-delay="0s" style="visibility: visible; animation-name: fadeInUp;">
+                            <h1 class="fw-900 mt-5"> <a href="#"
+                                    style="text-decoration: none;color:#e6d4f3">綜彩旅行社有限公司</a></h1>
+                        </div>
+                        <div class="footer-info wow animate__animated animate__fadeInDown animate__slow"
+                            data-wow-delay="0s" style="visibility: visible; animation-name: fadeInDown;">
+                            <ul class="list-unstyled">
+                                <li>統一編號：27560645</li>
+                                <li>交觀甲 第6783號 / 品保 北1513</li>
+                                <li>負責人：吳佳筠 / 聯絡人：徐信杰</li>
+                            </ul>
+                            <ul class="list-unstyled">
+                                <li>電話：<a href="tel:0225715838" class="d-inline-block">02-2571-5838</a>、<a
+                                        href="tel:0225634633" class="d-inline-block">02-2563-4633</a></li>
+                                <li>傳真：02-2562-2269</li>
+                                <li>地址：104台北市中山區松江路152號６樓603室</li>
+                                <li>信箱：<a href="mailto:colorfultravel@yahoo.com.tw">colorfultravel@yahoo.com.tw</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-12 wow animate__animated animate__slideInUp animate__slow" data-wow-delay="0s"
+                        style="visibility: visible; animation-name: slideInUp;">
+                        <div class="copyrights-info clearfix mt-4">
+                            <div class="copyrights d-inline-block mr-3 mb-2">Copyright © 綜彩旅行社有限公司 All Rights Reserved
+                            </div>
+                            <div class="copyrights d-inline-block">本網站內容享有著作權，禁止侵害，違者必究。</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <script>
+        // 設定輸入框的預設日期
+        let today = new Date();
+        let yyyy = today.getFullYear();
+        let mm = today.getMonth() + 1;
+        let dd = today.getDate();
+        let futureDate = new Date(today);
+        futureDate.setDate(today.getDate() + 7);
+
+        let edd = futureDate.getDate();
+        let emm = futureDate.getMonth() + 1;
+        let eyyyy = futureDate.getFullYear();
+
+        if (mm < 10) {
+            mm = '0' + mm;
+        }
+
+        if (dd < 10) {
+            dd = '0' + dd;
+        }
+
+        if (emm < 10) {
+            emm = '0' + emm;
+        }
+
+        if (edd < 10) {
+            edd = '0' + edd;
+        }
+
+
+        document.getElementById("start_date").value = yyyy + '-' + mm + '-' + dd;
+        document.getElementById("end_date").value = eyyyy + '-' + emm + '-' + edd;
+
+        function showContent(contentId) {
+            var contents = document.querySelectorAll('.content');
+            contents.forEach(function (content) {
+                content.style.display = 'none';
+            });
+
+            var contentToShow = document.getElementById(contentId);
+            contentToShow.style.display = 'block';
+        }
+
+        var city;
+        var globalcountry;
+        var globalcountryhotel;
+        var selectedglobalregion;
+        var selectedCity;
+        var selectedArea;
+        var flag_username_reg = false;
+        var flag_password_reg = false;
+        var flag_re_password_reg = false;
+        var flag_tel_reg = false;
+        var flag_email_reg = false;
+        var flag_file_upload = false;
+        var flag_chk01_reg = false;
+        $(function () {
+
+            // 網路計數器 counterup2套件
+            const counterUp = window.counterUp.default
+
+            const callback = entries => {
+                entries.forEach(entry => {
+                    const el = entry.target
+                    if (entry.isIntersecting && !el.classList.contains('is-visible')) {
+                        counterUp(el, {
+                            duration: 2000,
+                            delay: 20,
+                        })
+                        el.classList.add('is-visible')
+                    }
+                })
+            }
+
+            const IO = new IntersectionObserver(callback, { threshold: 1 })
+
+            const el = document.querySelector('.counter')
+            IO.observe(el)
+
+            const el01 = document.querySelector('.counter01')
+            IO.observe(el01)
+            const el02 = document.querySelector('.counter02')
+            IO.observe(el02)
+            const el03 = document.querySelector('.counter03')
+            IO.observe(el03)
+
+            // 監聽旅遊地區
+            $.ajax({
+                type: "GET",
+                url: "20241226-ex1-member_control_api_v1.php?action=getregionprocess",
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    data.data.forEach(function (item) {
+                        var strHTML = `<option value="${item.region}">${item.region}</option>`;
+                        $("#selectglobalregion").append(strHTML);
+                    });
+                },
+
+                error: function () {
+                    console.log("20241226-ex1-member_control_api_v1.php");
+                }
+
+            });
+
+
+            $.ajax({
+                type: "GET",
+                url: "js/CityCountyData.json",
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    console.log(data);
+                    city = data;
+                },
+
+                error: function () {
+                    console.log("error-js/CityCountyData.json");
+                }
+
+            });
+
+            $("selectCity").empty();
+            $("selectCity").append(`<option value="" class="text-center" selected disabled>----請選擇縣市名稱----</option>`);
+            city.forEach(function (item) {
+                var strHTML = `<option value="${item.CityName}">${item.CityName}</option>`;
+                $("#selectCity").append(strHTML);
+            });
+
+            // 監聽selectCity
+            $("#selectCity").change(function () {
+                selectedCity = $(this).val();
+
+                city.forEach(function (item) {
+                    if (item.CityName == selectedCity) {
+                        $("#selectArea").empty();
+                        $("#selectArea").append(`<option value="" class="text-center" selected disabled>----請選擇行政區域----</option>`)
+                        item.AreaList.forEach(function (myitem) {
+                            var strHTML = `<option value="${myitem.AreaName}">${myitem.AreaName}</option>`;
+                            $("#selectArea").append(strHTML);
+                        });
+                    }
+                });
+            });
+
+            // check Uid01
+            if (getCookie("Uid01")) {
+                var JSONdata = {};
+                JSONdata["uid01"] = getCookie("Uid01");
+
+                $.ajax({
+                    type: "POST",
+                    url: "20241226-ex1-member_control_api_v1.php?action=checkuid",
+                    data: JSON.stringify(JSONdata),
+                    dataType: "json",
+                    success: showdata_checkuid,
+                    error: function () {
+                        Swal.fire({
+                            title: "API介接錯誤?",
+                            text: "20241226-ex1-member_control_api_v1.php",
+                            icon: "error"
+                        });
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: "請先登入會員!",
+                    icon: "info",
+                    allowOutsideClick: false,
+                });
+            }
+
+            //即時監聽username_reg
+            $("#username_reg").bind("input propertychange", function () {
+                if ($(this).val().length > 2 && $(this).val().length < 11) {
+                    var JSONdata = {};
+                    JSONdata["username"] = $("#username_reg").val();
+                    $.ajax({
+                        type: "POST",
+                        url: "20241226-ex1-member_control_api_v1.php?action=checkusername",
+                        data: JSON.stringify(JSONdata),
+                        dataType: "json",
+                        success: showdata_member_check_username_reg_uni,
+                        error: function () {
+                            Swal.fire({
+                                title: "API介接錯誤",
+                                text: "20241226-ex1-member_control_api_v1.php",
+                                icon: "error"
+                            });
+                        }
+                    });
+
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    $("#regModal_username_invalid_feedback").text("不符合規則");
+                    flag_username_reg = false;
+                }
+            });
+
+            // 檢查password_reg
+            $("#password_reg").bind("input propertychange", function () {
+                $("#re_password_reg").removeClass("is-valid");
+                $("#re_password_reg").addClass("is-invalid");
+                flag_re_password_reg = false;
+                if ($(this).val().length > 2 && $(this).val().length < 7) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_password_reg = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_password_reg = false;
+                }
+            });
+
+            $("#re_password_reg").bind("input propertychange", function () {
+                if (flag_password_reg && $(this).val() === $("#password_reg").val()) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_re_password_reg = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_re_password_reg = false;
+                }
+            });
+
+            // 即時監聽tel_reg
+            $("#tel_reg").bind("input propertychange", function () {
+                if ($(this).val().length != 10) {
+
+
+                    $("#tel_reg").removeClass("is-valid");
+                    $("#tel_reg").addClass("is-invalid");
+                    $("#tel_reg-invalid-feedback").text("不符合規則");
+                    flag_tel_reg = false;
+                } else {
+
+                    var JSONdata = {};
+                    JSONdata["tel_reg"] = $(this).val();
+
+                    $.ajax({
+                        type: "POST",
+                        url: "20241226-ex1-member_control_api_v1.php?action=checktel",
+                        data: JSON.stringify(JSONdata),
+                        dataType: "json",
+                        success: showdata_member_check_tel_reg_uni,
+                        error: function () {
+                            Swal.fire({
+                                title: "API介接錯誤",
+                                text: "20241226-ex1-member_control_api_v1.php",
+                                icon: "error"
+                            });
+                        }
+
+                    });
+
+                    $("#tel_reg").removeClass("is-invalid");
+                    $("#tel_reg").addClass("is-valid");
+                    flag_tel_reg = true;
+                }
+            });
+
+            // 即時監聽email_reg
+            $("#email_reg").bind("input propertychange", function () {
+                if ($(this).val().length > 9 && $(this).val().length < 31) {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_email_reg = true;
+                } else {
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_email_reg = false;
+                }
+            });
+
+            //即時監聽chk01_reg
+            $("#chk01_reg").change(function () {
+                if ($(this).is(':checked')) {
+                    // next:抓checked的下一個標籤
+                    $(this).next().text("同意");
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                    flag_chk01_reg = true;
+                } else {
+                    $(this).next().text("不同意");
+                    $(this).removeClass("is-valid");
+                    $(this).addClass("is-invalid");
+                    flag_chk01_reg = false;
+                }
+            });
+
+            // 即時監聽username_login
+            $("#username_login").bind("input propertychange", function () {
+                if ($(this).val().length > 0) {
+                    $(this).removeClass("is-invalid");
+                    flag_username_login = true;
+                } else {
+                    $(this).addClass("is-invalid");
+                    flag_username_login = false;
+                }
+
+            });
+
+            // 即時監聽password_login
+            $("#password_login").bind("input propertychange", function () {
+                if ($(this).val().length > 0) {
+                    $(this).removeClass("is-invalid");
+                    flag_password_login = true;
+                } else {
+                    $(this).addClass("is-invalid");
+                    flag_password_login = false;
+                }
+
+            });
+
+            //即時監聽file_upload
+            $("#file_upload").change(function () {
+                if (file_upload.files[0].type == "image/jpeg" || file_upload.files[0].type == "image/png" || file_upload.files[0].type == "image/gif") {
+
+                    $("#prveImg").removeClass("d-none");
+                    $("#prveImg").attr("src", URL.createObjectURL(file_upload.files[0]));
+
+                    $("#file_upload").removeClass("is-invalid");
+                    $("#file_upload").addClass("is-valid");
+
+                    flag_file_upload = true;
+                } else {
+                    $("#file_upload").removeClass("is-valid");
+                    $("#file_upload").addClass("is-invalid");
+                    $("#prveImg").addClass("d-none");
+
+                    flag_file_upload = false;
+                }
+            });
+
+            //監聽按紐 ok_btn_reg
+            $("#ok_btn_reg").click(function (e) {
+                e.preventDefault();
+                if (flag_username_reg && flag_password_reg && flag_re_password_reg && flag_tel_reg && flag_email_reg && flag_file_upload && flag_chk01_reg) {
+
+                    var formData = new FormData($("#regForm")[0]);
+                    $.ajax({
+                        type: "POST",
+                        url: "20241226-ex1-member_control_api_v1.php?action=register",
+                        data: formData,
+                        dataType: "json",
+                        cache: false,
+                        contentType: false,
+                        processData: false,
+                        success: showdata_member_reg,
+                        error: function () {
+                            Swal.fire({
+                                title: "API介接錯誤?",
+                                text: "20241226-ex1-member_control_api_v1.php",
+                                icon: "error"
+                            });
+                        }
+                    });
+
+
+                } else {
+                    Swal.fire({
+                        title: "欄位有錯誤",
+                        icon: "error"
+                    });
+                }
+            });
+
+            $("#ok_btn_login").click(function () {
+                if (flag_username_login && flag_password_login) {
+                    var JSONdata = {};
+                    JSONdata["username"] = $("#username_login").val();
+                    JSONdata["password"] = $("#password_login").val();
+                    $.ajax({
+                        type: "POST",
+                        url: "20241226-ex1-member_control_api_v1.php?action=login",
+                        data: JSON.stringify(JSONdata),
+                        dataType: "json",
+                        success: showdata_member_login,
+                        error: function () {
+                            Swal.fire({
+                                title: "API介接錯誤?",
+                                text: "20241226-ex1-member_control_api_v1.php",
+                                icon: "error"
+                            });
+                        }
+                    });
+                } else {
+                    Swal.fire({
+                        title: "輸入錯誤!",
+                        text: "請輸入帳號和密碼!",
+                        icon: "error"
+                    });
+                }
+            });
+
+            //s02 logout按紐監聽
+            $("#s02_logout_btn").click(function () {
+                setCookie("Uid01", "", 7);
+                setCookie("level", "", 7);
+
+                location.href = "20241226-ex1.html";
+            });
+
+            let allData = [];
+            const pageSize = 3;
+
+
+            $(document).ready(function () {
+                // 預設的 region 值
+                const defaultRegion = "歐洲";
+
+                // 1.點擊 nav-link
+                $(".navbar-nav .nav-link").on("click", function (e) {
+                    e.preventDefault();
+                    const region = $(this).data("region");
+                    window.open(`20241226-ex1-process_list_panel_v1.html?region=${region}`, "_blank");
+                });
+
+                // 2.讀取網址中的 region 參數
+                const urlParams = new URLSearchParams(window.location.search);
+                const regionParam = urlParams.get("region");
+
+                // 3. 點擊按鈕時
+                $(".white-black-btn").on("click", function () {
+                    const region = $(this).data("region");
+                    history.pushState(null, "", `?region=${region}`);
+                    fetchData(region); 
+                });
+
+                // 監聽 region 值
+                if (regionParam) {
+                    fetchData(regionParam);
+                } else {
+                    fetchData(defaultRegion);
+                }
+
+                function fetchData(region) {
+
+                    $.ajax({
+                        url: "20241226-ex1-process_control_api_v1.php?action=getcardprocess",
+                        type: "POST",
+                        data: { region: region },
+                        dataType: "json",
+                        success: function (res) {
+                            console.log(res);
+                            if (res.state) {
+                                allData = res.data;
+                                renderPagination(1);
+                                scrollToTop();
+
+                            } else {
+                                $("#result-container").html(`
+                            <div class="d-flex justify-content-center align-items-center" style="min-height: 300px;">
+                                <div class="text-center w-100 animate__animated animate__fadeIn">
+                                    <p class="text-danger fs-3 fw-bold">${res.message}</p>
+                                </div>
+                            </div>
+                            `);
+                                $("#pagination").html("");
+                            }
+                        },
+                        error: function () {
+                            Swal.fire({
+                                title: "API介接錯誤!",
+                                text: "20241226-ex1-process_control_api_v1.php",
+                                icon: "error"
+                            });
+                        }
+                    });
+                }
+
+                // 渲染單頁資料
+                function renderCards(data) {
+                    let html = "";
+                    data.forEach(item => {
+                        html += `
+                    <div class="col-md-4 my-3">
+                        <div class="card h-100 intro  myroller-l shadow-sm align-items-center">
+                            <img src="${item.photo || 'https://via.placeholder.com/300x180'}" class="card-img-top" alt="...">
+                            <a href="20241226-ex1-process_detail_signup_panel_v1.html?id=${item.id}" class="roller"></a>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title text-danger">${item.title}</h5>
+                                <p class="card-text">${item.content || '這是一段預設說明。'}</p>
+                                <a href="20241226-ex1-process_detail_signup_panel_v1.html?id=${item.id}" target="_blank" 
+                                class="btn border fw-1000 yellow-black-btn mt-auto">我要報名</a>
+                            </div>
+                        </div>
+                    </div>`;
+                    });
+                    $("#result-container").html(html);
+                }
+
+                // 渲染分頁 + 分頁點擊事件
+                function renderPagination(currentPage) {
+                    const totalPages = Math.ceil(allData.length / pageSize);
+                    const start = (currentPage - 1) * pageSize;
+                    const pageData = allData.slice(start, start + pageSize);
+                    renderCards(pageData);
+
+                    let pagHTML = '';
+                    for (let i = 1; i <= totalPages; i++) {
+                        pagHTML += `<li class="page-item ${i === currentPage ? 'active' : ''}">
+                <a class="page-link" href="#">${i}</a></li>`;
+                    }
+                    $("#pagination").html(pagHTML);
+
+                    $("#pagination .page-link").off("click").on("click", function (e) {
+                        e.preventDefault();
+                        const page = parseInt($(this).text());
+                        renderPagination(page);
+                    });
+                }
+            });
+
+
+            // 按紐監聽travel_srh_btn 
+            $("#travel_srh_btn").click(function () {
+
+                var JSONdata = {};
+                JSONdata["startdate"] = $("#start_date").val();
+                JSONdata["enddate"] = $("#end_date").val();
+                JSONdata["region"] = $("#selectglobalregion").val();
+                JSONdata["keyword"] = $("#process_keyword").val();
+                $.ajax({
+                    type: "POST",
+                    url: "20241226-ex1-member_control_api_v1.php?action=getsrhprocess",
+                    data: JSON.stringify(JSONdata),
+                    dataType: "json",
+                    success: function (data) {
+                        console.log(data);
+                        localStorage.setItem('formData', JSON.stringify(data));
+                        window.open('20241226-ex1-srh_control_panel_v1.html', '_blank');
+                    },
+                    error: function () {
+                        Swal.fire({
+                            title: "API介接錯誤?",
+                            text: "20241226-ex1-member_control_api_v1.php",
+                            icon: "error"
+                        });
+                    }
+                });
+
+            });
+
+        });
+
+        // 檢查註冊手機是否重複
+        function showdata_member_check_tel_reg_uni(data) {
+            if (data.state) {
+                $("#tel_reg").removeClass("is-invalid");
+                $("#tel_reg").addClass("is-valid");
+                $("#regModal_tel-valid-feedback").text(data.message);
+                flag_tel_reg = true;
+            } else {
+                $("#tel_reg").removeClass("is-valid");
+                $("#tel_reg").addClass("is-invalid");
+                $("#regModal_tel-invalid-feedback").text(data.message);
+                flag_tel_reg = false;
+            }
+        }
+
+        // 註冊成功
+        function showdata_member_reg(data) {
+            Swal.fire({
+                title: data.message,
+                icon: "success",
+                allowOutsideClick: false
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    location.href = "20241226-ex1.html";
+                }
+            });
+        }
+
+        // 檢查註冊帳號是否重複
+        function showdata_member_check_username_reg_uni(data) {
+            if (data.state) {
+                // 帳號不存在可以使用
+                $("#username_reg").removeClass("is-invalid");
+                $("#username_reg").addClass("is-valid");
+                flag_username_reg = true;
+                $("#regModal_username_valid_feedback").text(data.message);
+            } else {
+                // 帳號存在不可以使用
+                $("#username_reg").removeClass("is-valid");
+                $("#username_reg").addClass("is-invalid");
+                $("#regModal_username_invalid_feedback").text(data.message);
+                flag_username_reg = false;
+            }
+        }
+
+        //檢查會員登入狀態
+        function showdata_member_login(data) {
+            if (data.state) {
+                Swal.fire({
+                    title: data.message,
+                    icon: "success"
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        location.href = "20241226-ex1.html";
+                        $("#s02_username_showtext").removeClass("d-none");
+                        $("#s02_username_text").text(data.data.userName);
+                        $("#s02_reg_btn").addClass("d-none");
+                        $("#s02_login_btn").addClass("d-none");
+                        $("#s02_logout_btn").removeClass("d-none");
+                        $("#s12").removeClass("d-none");
+                        if (data.data.level != "" && data.data.level === "管理者") {
+                            $("#s02_manager_panel_btn").removeClass("d-none");
+                        } else if (data.data.level != "") {
+                            $("#s02_member_panel_btn").removeClass("d-none");
+                        }
+
+                        setCookie("Uid01", data.data.Uid01, 7);
+                        setCookie("level", data.data.level, 7);
+
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: data.message,
+                    icon: "error"
+                });
+            }
+        }
+
+        //檢查uid01
+        function showdata_checkuid(data) {
+            if (data.state) {
+                $("#s02_username_showtext").removeClass("d-none");
+                $("#s02_username_text").text(data.data.userName);
+                $("#s02_reg_btn").addClass("d-none");
+                $("#s02_login_btn").addClass("d-none");
+                $("#s02_logout_btn").removeClass("d-none");
+
+                $("#s02_control_panel_btn").removeClass("d-none");
+                if (data.data.level != "" && data.data.level === "管理者") {
+
+                    $("#s02_manager_panel_btn").removeClass("d-none");
+                } else if (data.data.level != "") {
+                    $("#s02_member_panel_btn").removeClass("d-none");
+                }
+
+                $("#s12").removeClass("d-none");
+            }
+        }
+
+
+
+        // from w3c Cookie
+        function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+    </script>
+</body>
+
+</html>
