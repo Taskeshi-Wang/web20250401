@@ -126,7 +126,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg" style="background-color: #faf9f9;">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="20241226-ex1.html">
+                    <a class="navbar-brand" href="index.html">
                         <img src="images/company_logo.jpg" alt="" style="width: 152px;height: 54px;">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -1144,7 +1144,7 @@
                 setCookie("Uid01", "", 7);
                 setCookie("level", "", 7);
 
-                location.href = "20241226-ex1.html";
+                location.href = "index.html";
             });
 
             let allData = [];
@@ -1313,7 +1313,7 @@
                 allowOutsideClick: false
             }).then((result) => {
                 if (result.isConfirmed) {
-                    location.href = "20241226-ex1.html";
+                    location.href = "index.html";
                 }
             });
         }
@@ -1343,7 +1343,7 @@
                     icon: "success"
                 }).then((result) => {
                     if (result.isConfirmed) {
-                        location.href = "20241226-ex1.html";
+                        location.href = "index.html";
                         $("#s02_username_showtext").removeClass("d-none");
                         $("#s02_username_text").text(data.data.userName);
                         $("#s02_reg_btn").addClass("d-none");
